@@ -1,27 +1,62 @@
-import React from 'react';
-import { Briefcase, Code, BarChart2 } from 'react-feather'; // Import the icons
+import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
+import { Briefcase, Code, BarChart2 } from 'react-feather'; // Uncomment and use the correct imports
+
+const images = [
+  // 'src/assets/hero/shoping.jpg',
+  'assets/hero/women.png',
+];
 
 const Home = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header Section */}
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
-            Welcome to Our Company
-          </h1>
-          <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-serif">
-            Empowering your business with cutting-edge solutions and services.
-          </p>
-          <a
-            href="#services"
-            className=" font-serif mt-8 inline-block bg-blue-500 dark:bg-teal-600 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md"
-          >
-            Explore Our Services
-          </a>
+        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex justify-between items-center">
+          
+          {/* Left Side - Text Content */}
+          <div className="text-left max-w-xl">
+            <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              Welcome to Our Company
+            </h1>
+            <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-300 font-serif">
+              Empowering your business with cutting-edge solutions and services.
+            </p>
+            <a
+              href="#services"
+              className="mt-8 inline-block bg-blue-500 dark:bg-teal-600 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
+            >
+              Explore Our Services
+            </a>
+          </div>
+
+          {/* Right Side - Image Gallery */}
+          <div className="w-1/2">
+            <div className="relative h-96 overflow-hidden rounded-xl shadow-lg">
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Gallery image ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </header>
 
@@ -35,26 +70,25 @@ const Home = () => {
               We offer a wide range of services to help your business thrive in the digital age.
             </p>
           </div>
-
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'E Commerce',
                 description:
                   'Expert guidance to help navigate complex business challenges and achieve your goals.',
-                icon: <Briefcase size={32} />,
+                icon: <Briefcase size={32} />, // Use the actual icon component
               },
               {
                 title: 'Software Development',
                 description:
                   'High-quality software solutions tailored to your business needs and goals.',
-                icon: <Code size={32} />,
+                icon: <Code size={32} />, // Use the actual icon component
               },
               {
                 title: 'Hulu Pay',
                 description:
                   'Unlock the power of data with advanced analytics and insights to drive growth.',
-                icon: <BarChart2 size={32} />,
+                icon: <BarChart2 size={32} />, // Use the actual icon component
               },
             ].map((service, index) => (
               <div
@@ -76,7 +110,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
