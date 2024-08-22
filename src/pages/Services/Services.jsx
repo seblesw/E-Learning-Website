@@ -5,18 +5,19 @@ import Footer from '../../components/Footer/Footer';
 const Services = () => {
   const services = [
     {
-      title: 'E Commerce',
-      description: 'Expert guidance to help navigate complex business challenges and achieve your goals.',
+      title: 'E-Commerce',
+      description: 'Our e-commerce business telegram mini app is a platform designed to facilitate the buying and selling of goods and services over the internet',
       icon: <Briefcase size={32} />,
     },
     {
       title: 'Crypto Business',
-      description: 'High-quality software solutions tailored to your business needs and goals.',
-      icon: <Code size={32} />,
+      description:
+      'Our crypto business involves the creation, management, or facilitation of services and products related to cryptocurrencies and blockchain technology.',
+       icon: <Code size={32} />,
     },
     {
       title: 'Hulu Pay',
-      description: 'Unlock the power of data with advanced analytics and insights to drive growth.',
+      description: 'Payment Solution associated with Hulu, a popular streaming service.',
       icon: <BarChart2 size={32} />,
     },
   ];
@@ -30,7 +31,7 @@ const Services = () => {
           <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-lg font-serif">
             Our Services
           </h1>
-          <p className="mt-6 text-xl leading-9 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-serif">
+          <p className="mt-6 text-2xl leading-9 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-serif">
             Discover the wide range of services we offer to empower your business.
           </p>
         </div>

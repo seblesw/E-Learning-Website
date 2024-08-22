@@ -41,7 +41,6 @@ const Home = () => {
               Explore Our Services
             </a>
           </div>
-
           {/* Right Side - Image Gallery */}
           <div className="w-1/2">
             <div className="relative h-96 overflow-hidden rounded-xl shadow-lg">
@@ -59,36 +58,33 @@ const Home = () => {
           </div>
         </div>
       </header>
-
       <section id="services" className="py-16 bg-gray-100 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
               Our Services
             </h2>
-            <p className="mt-4 text-lg leading-7 text-gray-600 dark:text-gray-300 max-w-xl mx-auto font-serif">
+            <p className="mt-4 text-2xl leading-7 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-serif">
               We offer a wide range of services to help your business thrive in the digital age.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'E Commerce',
-                description:
-                  'Expert guidance to help navigate complex business challenges and achieve your goals.',
-                icon: <Briefcase size={32} />, // Use the actual icon component
+                title: 'E-Commerce',
+                description: 'Our e-commerce business telegram mini app is a platform designed to facilitate the buying and selling of goods and services over the internet',
+                icon: <Briefcase size={32} />, 
               },
               {
-                title: 'Software Development',
+                title: 'Crypto Business',
                 description:
-                  'High-quality software solutions tailored to your business needs and goals.',
-                icon: <Code size={32} />, // Use the actual icon component
+                  'Our crypto business involves the creation, management, or facilitation of services and products related to cryptocurrencies and blockchain technology.',
+                icon: <Code size={32} />, 
               },
               {
                 title: 'Hulu Pay',
-                description:
-                  'Unlock the power of data with advanced analytics and insights to drive growth.',
-                icon: <BarChart2 size={32} />, // Use the actual icon component
+                description: 'Payment Solution associated with Hulu, a popular streaming service.',
+                icon: <BarChart2 size={32} />, 
               },
             ].map((service, index) => (
               <div
@@ -98,10 +94,10 @@ const Home = () => {
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
+                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
                   {service.title}
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
+                <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
                   {service.description}
                 </p>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>

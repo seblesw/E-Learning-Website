@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-3 space-y-2 bg-gray-900 p-4 rounded-lg shadow-md">
+          <div className="md:hidden mt-3 space-y-2 from-blue-500 via-teal-600 to-gray-900 dark:bg-gray-900 p-4 rounded-lg shadow-md">
             <Link
               to="/"
               onClick={handleLinkClick}
