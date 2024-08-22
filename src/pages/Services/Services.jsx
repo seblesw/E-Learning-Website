@@ -10,7 +10,7 @@ const Services = () => {
       icon: <Briefcase size={32} />,
     },
     {
-      title: 'Software Development',
+      title: 'Crypto Business',
       description: 'High-quality software solutions tailored to your business needs and goals.',
       icon: <Code size={32} />,
     },
