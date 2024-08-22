@@ -1,8 +1,66 @@
-# React + Vite
+# Hulu Labs Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for a Hulu Labs landing page built with **React** and **Tailwind CSS**. The landing page is designed to be fully responsive, modern, and performant.
 
-Currently, two official plugins are available:
+## Table of Contents
+1. [Project Description](#project-description)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [File Structure](#file-structure)
+7. [Creating an Issue](#creating-an-issue)
+8. [Contributing](#contributing)
+9. [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
+
+The business landing page serves as a front-facing site to showcase the business's products or services. It is built using **React** for component-based architecture and **Tailwind CSS** for fast and efficient styling.
+
+## Features
+
+- **Responsive Design**: Optimized for all screen sizes (mobile, tablet, desktop).
+- **Tailwind CSS**: Utilizes utility-first CSS for rapid UI development.
+- **React Components**: Modular and reusable components.
+- **SEO Friendly**: Includes metadata for better search engine indexing.
+- **Cross-Browser Compatibility**: Tested on modern web browsers.
+
+## Getting Started
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+- Node.js (version 14.x or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/business-landing-page.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd Hulu labs-landing-page
+    ```
+
+3. Install the dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Usage
+
+To start the development server:
+
+```bash
+npm run dev
+# or
+yarn run dev
