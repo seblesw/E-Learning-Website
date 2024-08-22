@@ -6,10 +6,17 @@ import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Projects from './pages/Projects/Projects';
 import Blog from './pages/Blog/Blog';
-import Contact from './pages/Contact/contact';
-import Careers from './pages/Careers/Careers';
 
 function App() {
+  // React.useEffect(() => {
+  //   AOS.init({
+  //     offset: 100,
+  //     duration: 800,
+  //     easing: 'ease-in-sine',
+  //     delay: 100,
+  //   });
+  //   AOS.refresh();
+  // }, []);
   return (
     <Router>
       <Navbar />
@@ -19,8 +26,6 @@ function App() {
         <Route path="/services" element={< Services/>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/careers" element={<Careers />} />
       </Routes>
     </Router>
   );
