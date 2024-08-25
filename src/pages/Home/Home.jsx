@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
-import { Briefcase, Code, BarChart2 } from 'react-feather'; // Uncomment and use the correct imports
+import { Briefcase, Code, BarChart2 } from 'react-feather';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const images = [
   // 'src/assets/hero/shoping.jpg',
@@ -11,6 +13,10 @@ const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1200, // Adjust the duration as needed
+    });
+    
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000); // Change image every 4 seconds
@@ -24,10 +30,12 @@ const Home = () => {
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex justify-between items-center">
-          
+        <div 
+          className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
+          data-aos="fade-up" // AOS animation
+        >
           {/* Left Side - Text Content */}
-          <div className="text-left max-w-xl">
+          <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
               Welcome to Our Company
             </h1>
@@ -37,19 +45,21 @@ const Home = () => {
             <a
               href="#services"
               className="mt-8 inline-block bg-blue-500 dark:bg-teal-600 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
+              data-aos="zoom-in"
             >
               Explore Our Services
             </a>
           </div>
+
           {/* Right Side - Image Gallery */}
-          <div className="w-1/2">
-            <div className="relative h-96 overflow-hidden rounded-xl shadow-lg">
+          <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
+            <div className="relative h-64 sm:h-80 lg:h-96 w-full overflow-hidden rounded-xl shadow-lg">
               {images.map((image, index) => (
                 <img
                   key={index}
                   src={image}
                   alt={`Gallery image ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  className={`absolute inset-0 w-full h-full max-w-full h-auto object-cover transition-opacity duration-1000 ${
                     index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -58,7 +68,8 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <section id="services" className="py-16 bg-gray-100 dark:bg-gray-900">
+
+      <section id="services" className="py-16 bg-gray-100 dark:bg-gray-900" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
@@ -90,6 +101,7 @@ const Home = () => {
               <div
                 key={index}
                 className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                data-aos="zoom-in-up" // Different AOS animation for services
               >
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   {service.icon}
@@ -107,7 +119,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
+      <Footer data-aos="fade-up" />
     </div>
   );
 };

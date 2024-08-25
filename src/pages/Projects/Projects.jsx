@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Adjust the duration as needed
+    });
+  }, []);
+
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 text-center">
+        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 text-center" data-aos="fade-up">
           <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
             Our Projects
           </h1>
@@ -23,19 +31,23 @@ const Projects = () => {
               {
                 title: 'Project One',
                 description: 'Description of Project One.',
+                animation: 'fade-right', // AOS animation type
               },
               {
                 title: 'Project Two',
                 description: 'Description of Project Two.',
+                animation: 'fade-up', // AOS animation type
               },
               {
                 title: 'Project Three',
                 description: 'Description of Project Three.',
+                animation: 'fade-left', // AOS animation type
               },
             ].map((project, index) => (
               <div
                 key={index}
                 className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                data-aos={project.animation}
               >
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   <span className="text-2xl font-bold">P{index + 1}</span>

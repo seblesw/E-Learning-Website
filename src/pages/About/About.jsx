@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import { Briefcase, Code, BarChart2 } from 'react-feather'; // Import the required icons
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const images = [
   'assets/hero/company.jpg',
@@ -10,6 +12,10 @@ const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    AOS.init({
+      duration: 1200, // Adjust the duration as needed
+    });
+    
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000); // Change image every 4 seconds
@@ -23,10 +29,12 @@ const About = () => {
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex justify-between items-center">
-          
+        <div 
+          className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex justify-between items-center"
+          data-aos="fade-up" // AOS animation for the header section
+        >
           {/* Left Side - Text Content */}
-          <div className="text-left max-w-xl">
+          <div className="text-left max-w-xl" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
               About Our Company
             </h1>
@@ -36,13 +44,14 @@ const About = () => {
             <a
               href="#mission"
               className="mt-8 inline-block bg-blue-500 dark:bg-teal-600 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
+              data-aos="zoom-in"
             >
               Learn More About Us
             </a>
           </div>
 
           {/* Right Side - Image Gallery */}
-          <div className="w-1/2">
+          <div className="w-1/2" data-aos="fade-left">
             <div className="relative h-96 overflow-hidden rounded-xl shadow-lg">
               {images.map((image, index) => (
                 <img
@@ -60,11 +69,11 @@ const About = () => {
       </header>
 
       {/* Vision and Mission Section */}
-      <section id="mission" className="py-16 bg-gray-100 dark:bg-gray-900">
+      <section id="mission" className="py-16 bg-gray-100 dark:bg-gray-900" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Mission */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Mission
               </h2>
@@ -74,7 +83,7 @@ const About = () => {
             </div>
 
             {/* Vision */}
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Vision
               </h2>
@@ -87,7 +96,7 @@ const About = () => {
       </section>
 
       {/* Founders Section */}
-      <section id="founders" className="py-16 bg-white dark:bg-gray-900">
+      <section id="founders" className="py-16 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
@@ -117,6 +126,7 @@ const About = () => {
               <div
                 key={index}
                 className="relative flex flex-col items-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 transform hover:scale-105"
+                data-aos="zoom-in-up" // AOS animation for the founders section
               >
                 <div className="w-48 h-48 mb-6 overflow-hidden rounded-full border-4 border-gray-200 dark:border-gray-700 shadow-lg">
                   <img

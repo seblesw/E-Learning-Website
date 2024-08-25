@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
@@ -6,17 +6,21 @@ import About from './pages/About/About';
 import Services from './pages/Services/Services';
 import Projects from './pages/Projects/Projects';
 import Blog from './pages/Blog/Blog';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
-  // React.useEffect(() => {
-  //   AOS.init({
-  //     offset: 100,
-  //     duration: 800,
-  //     easing: 'ease-in-sine',
-  //     delay: 100,
-  //   });
-  //   AOS.refresh();
-  // }, []);
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <Router>
       <Navbar />
