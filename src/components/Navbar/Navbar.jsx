@@ -58,6 +58,12 @@ const Navbar = () => {
             >
               Blog
             </Link>
+            <Link
+              to="/contact"
+              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
+            >
+              Contact
+            </Link>
           </div>
         </div>
 
@@ -97,6 +103,13 @@ const Navbar = () => {
               className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
             >
               Blog
+            </Link>
+            <Link
+              to="/contact"
+              onClick={handleLinkClick}
+              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+            >
+              Contact
             </Link>
           </div>
         )}

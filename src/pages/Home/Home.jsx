@@ -16,7 +16,7 @@ const Home = () => {
     AOS.init({
       duration: 1200, // Adjust the duration as needed
     });
-    
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 4000); // Change image every 4 seconds
@@ -32,7 +32,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
         <div 
           className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
-          data-aos="fade-up" // AOS animation
+          data-aos="fade-up" 
         >
           {/* Left Side - Text Content */}
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
@@ -101,7 +101,7 @@ const Home = () => {
               <div
                 key={index}
                 className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
-                data-aos="zoom-in-up" // Different AOS animation for services
+                data-aos="zoom-in-up" 
               >
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   {service.icon}
@@ -111,6 +111,49 @@ const Home = () => {
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
                   {service.description}
+                </p>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why-choose-us" className="py-16 bg-gray-100 dark:bg-gray-900" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              Why Choose Us?
+            </h2>
+            <p className="mt-4 text-2xl leading-7 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-serif">
+              Our dedication to quality and client satisfaction sets us apart.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: 'Experience',
+                description: 'Over 5 years of industry experience.',
+              },
+              {
+                title: 'Quality',
+                description: 'We deliver high-quality solutions tailored to your needs.',
+              },
+              {
+                title: 'Support',
+                description: '24/7 customer support to ensure your success.',
+              },
+            ].map((benefit, index) => (
+              <div
+                key={index}
+                className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                data-aos="zoom-in-up"
+              >
+                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
+                  {benefit.title}
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
+                  {benefit.description}
                 </p>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
               </div>

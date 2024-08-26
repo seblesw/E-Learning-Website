@@ -8,6 +8,7 @@ import Projects from './pages/Projects/Projects';
 import Blog from './pages/Blog/Blog';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Contact from './pages/Contact/Contact';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/services" element={< Services/>} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
