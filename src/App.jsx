@@ -9,6 +9,7 @@ import Blog from './pages/Blog/Blog';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Contact from './pages/Contact/Contact';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
 

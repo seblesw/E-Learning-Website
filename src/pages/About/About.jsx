@@ -158,10 +158,6 @@ const About = () => {
                 image: 'assets/founders/mekides.jpg',
                 description:
                   'Dr. Mekides Assefa has been leading our company with a focus on innovation and strategic growth, bringing years of experience in software engineering and business development.',
-                socialLinks: {
-                  linkedin: '#',
-                  twitter: '#',
-                },
               },
               {
                 name: 'Dr. Amir Teshome',
@@ -169,10 +165,7 @@ const About = () => {
                 image: 'assets/founders/amir.jpg',
                 description:
                   'With deep expertise in technology and a passion for innovation, Dr. Amir Teshome oversees the technical direction of our projects, ensuring the highest quality standards.',
-                socialLinks: {
-                  linkedin: '#',
-                  twitter: '#',
-                },
+               
               },
               {
                 name: 'Dr. Yilkal Andualem',
@@ -180,10 +173,7 @@ const About = () => {
                 image: 'assets/founders/yilkal.jpg',
                 description:
                   'With deep expertise in technology and a passion for innovation, Dr. Yilkal Andualem brings a unique vision to the company, focusing on growth and strategic partnerships.',
-                socialLinks: {
-                  linkedin: '#',
-                  twitter: '#',
-                },
+                
               },
               {
                 name: 'Dr. Chalachew Temesgen',
@@ -191,10 +181,7 @@ const About = () => {
                 image: 'assets/founders/chalachew.jpg',
                 description:
                   'Dr. Chalachew Temesgen ensures the highest quality in our projects, with a deep commitment to innovation and excellence in technology.',
-                socialLinks: {
-                  linkedin: '#',
-                  twitter: '#',
-                },
+                
               },
             ].map((founder, index) => (
               <div
@@ -205,7 +192,7 @@ const About = () => {
                 <div className="w-48 h-48 mb-6 overflow-hidden rounded-full border-4 border-gray-200 dark:border-gray-700 shadow-lg">
                   <img
                     src={founder.image}
-                    alt={founder.name}
+                    // alt={founder.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -218,18 +205,6 @@ const About = () => {
                 <p className="text-lg text-gray-600 dark:text-gray-300 text-center font-serif">
                   {founder.description}
                 </p>
-                <div className="absolute bottom-4 flex space-x-4">
-                  {founder.socialLinks.linkedin && (
-                    <a href={founder.socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-linkedin text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 text-2xl transition-colors duration-200"></i>
-                    </a>
-                  )}
-                  {founder.socialLinks.twitter && (
-                    <a href={founder.socialLinks.twitter} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-twitter text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 text-2xl transition-colors duration-200"></i>
-                    </a>
-                  )}
-                </div>
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-transparent to-blue-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
               </div>
             ))}

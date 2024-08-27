@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'react-feather';
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const handleLinkClick = () => {
     setIsOpen(false);
+  };
+
+  const getLinkClassName = (path) => {
+    return location.pathname === path
+      ? "relative text-blue-300 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-blue-300 after:left-0 after:top-full font-serif font-bold"
+      : "relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold";
   };
 
   return (
@@ -28,40 +35,22 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className="relative text-white text-lg hover:text-gray-200 transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/" className={getLinkClassName('/')}>
               Home
             </Link>
-            <Link
-              to="/about"
-              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/about" className={getLinkClassName('/about')}>
               About Us
             </Link>
-            <Link
-              to="/services"
-              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/services" className={getLinkClassName('/services')}>
               Services
             </Link>
-            <Link
-              to="/projects"
-              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/projects" className={getLinkClassName('/projects')}>
               Projects
             </Link>
-            <Link
-              to="/blog"
-              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/blog" className={getLinkClassName('/blog')}>
               Blog
             </Link>
-            <Link
-              to="/contact"
-              className="relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold"
-            >
+            <Link to="/contact" className={getLinkClassName('/contact')}>
               Contact
             </Link>
           </div>
@@ -72,42 +61,42 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={handleLinkClick}
-              className="block text-white text-lg hover:text-gray-200 transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/')}
             >
               Home
             </Link>
             <Link
               to="/about"
               onClick={handleLinkClick}
-              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/about')}
             >
               About Us
             </Link>
             <Link
               to="/services"
               onClick={handleLinkClick}
-              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/services')}
             >
               Services
             </Link>
             <Link
               to="/projects"
               onClick={handleLinkClick}
-              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/projects')}
             >
               Projects
             </Link>
             <Link
               to="/blog"
               onClick={handleLinkClick}
-              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/blog')}
             >
               Blog
             </Link>
             <Link
               to="/contact"
               onClick={handleLinkClick}
-              className="block text-gray-200 hover:text-white text-lg transition-all duration-300 font-serif font-bold"
+              className={getLinkClassName('/contact')}
             >
               Contact
             </Link>

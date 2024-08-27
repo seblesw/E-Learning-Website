@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from '../../components/Footer/Footer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,6 +62,9 @@ const Contact = () => {
   };
 
   return (
+    <div>
+
+   
     <section id="contact" className="py-16 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center font-serif" data-aos="fade-up">GET In Touch</h2>
@@ -121,6 +125,8 @@ const Contact = () => {
         </form>
       </div>
     </section>
+    <Footer/>
+    </div>
   );
 };
 
