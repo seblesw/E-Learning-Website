@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const getLinkClassName = (path) => {
     return location.pathname === path
-      ? "relative text-blue-300 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-blue-300 after:left-0 after:top-full font-serif font-bold"
+      ? "relative text-blue-300 text-lg transition-all duration-300 font-serif font-bold"
       : "relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold";
   };
 
@@ -29,7 +29,10 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-gray-200 focus:outline-none">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-gray-200 focus:outline-none"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -53,53 +56,37 @@ const Navbar = () => {
             <Link to="/contact" className={getLinkClassName('/contact')}>
               Contact
             </Link>
+            <Link to="/waitlist" className={getLinkClassName('/waitlist')}>
+              Waitlist
+            </Link>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-3 space-y-2 from-blue-500 via-teal-600 to-gray-900 dark:bg-gray-900 p-4 rounded-lg shadow-md">
-            <Link
-              to="/"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/')}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/about')}
-            >
-              About Us
-            </Link>
-            <Link
-              to="/services"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/services')}
-            >
-              Services
-            </Link>
-            <Link
-              to="/projects"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/projects')}
-            >
-              Projects
-            </Link>
-            <Link
-              to="/blog"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/blog')}
-            >
-              Blog
-            </Link>
-            <Link
-              to="/contact"
-              onClick={handleLinkClick}
-              className={getLinkClassName('/contact')}
-            >
-              Contact
-            </Link>
+          <div className="md:hidden mt-3 bg-gradient-to-r from-blue-500 via-teal-600 to-gray-900 dark:bg-gray-900 p-4 rounded-lg shadow-md space-y-2">
+            <div className="flex flex-col space-y-2">
+              <Link to="/" onClick={handleLinkClick} className={getLinkClassName('/')}>
+                Home
+              </Link>
+              <Link to="/about" onClick={handleLinkClick} className={getLinkClassName('/about')}>
+                About Us
+              </Link>
+              <Link to="/services" onClick={handleLinkClick} className={getLinkClassName('/services')}>
+                Services
+              </Link>
+              <Link to="/projects" onClick={handleLinkClick} className={getLinkClassName('/projects')}>
+                Projects
+              </Link>
+              <Link to="/blog" onClick={handleLinkClick} className={getLinkClassName('/blog')}>
+                Blog
+              </Link>
+              <Link to="/contact" onClick={handleLinkClick} className={getLinkClassName('/contact')}>
+                Contact
+              </Link>
+              <Link to="/waitlist" onClick={handleLinkClick} className={getLinkClassName('/waitlist')}>
+                Waitlist
+              </Link>
+            </div>
           </div>
         )}
       </div>

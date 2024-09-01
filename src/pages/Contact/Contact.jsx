@@ -67,7 +67,7 @@ const Contact = () => {
    
     <section id="contact" className="py-16 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center font-serif" data-aos="fade-up">GET In Touch</h2>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center font-serif" data-aos="fade-up">Contact Us</h2>
         {error && <p className="error text-red-500 mb-4 text-center" data-aos="fade-down">{error}</p>}
         {success && <p className="success text-green-500 mb-4 text-center" data-aos="fade-down">{success}</p>}
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-gray-50 dark:bg-gray-700 p-8 rounded-lg shadow-lg" data-aos="fade-up">

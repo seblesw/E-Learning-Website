@@ -8,8 +8,9 @@ import Projects from './pages/Projects/Projects';
 import Blog from './pages/Blog/Blog';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Contact from './pages/Contact/Contact';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Waitlist from './pages/Waitlist/Waitlist';
+import Contact from './pages/Contact/Contact';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/waitlist" element={<Waitlist />} />
       </Routes>
     </Router>
   );

@@ -4,7 +4,7 @@ import { Briefcase, Code, BarChart2 } from 'react-feather';
 import Footer from '../../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Contact from '../Contact/Contact';
+import Contact from '../Waitlist/Waitlist';
 
 const Services = () => {
   useEffect(() => {
