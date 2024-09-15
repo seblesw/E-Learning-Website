@@ -1,10 +1,8 @@
-// src/pages/Services/Services.js
 import React, { useEffect } from 'react';
 import { Briefcase, Code, BarChart2 } from 'react-feather';
 import Footer from '../../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Contact from '../Waitlist/Waitlist';
 
 const Services = () => {
   useEffect(() => {
@@ -12,7 +10,6 @@ const Services = () => {
       duration: 1200,
     });
   }, []);
-
   const services = [
     {
       title: 'E-Commerce',
@@ -36,7 +33,6 @@ const Services = () => {
 
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Header Section */}
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-md">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
@@ -49,8 +45,6 @@ const Services = () => {
           </p>
         </div>
       </header>
-
-      {/* Detailed Services Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-900" id="services-section" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -85,7 +79,6 @@ const Services = () => {
           </p>
         </div>
       </section>
-
       <section className="py-16 bg-white dark:bg-gray-800" id="workflow-section" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 font-serif">
@@ -128,5 +121,4 @@ const Services = () => {
     </div>
   );
 };
-
 export default Services;

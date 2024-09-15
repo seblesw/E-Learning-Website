@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const images = [
-  // 'src/assets/hero/shoping.jpg',
   'assets/hero/women.png',
 ];
 
@@ -14,19 +13,18 @@ const Home = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Adjust the duration as needed
+      duration: 1200, 
     });
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Header Section */}
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
@@ -34,7 +32,6 @@ const Home = () => {
           className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
           data-aos="fade-up" 
         >
-          {/* Left Side - Text Content */}
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
               Welcome to Our Company
@@ -51,7 +48,6 @@ const Home = () => {
             </a>
           </div>
 
-          {/* Right Side - Image Gallery */}
           <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
             <div className="relative h-64 sm:h-80 lg:h-96 w-full overflow-hidden rounded-xl shadow-lg">
               {images.map((image, index) => (
@@ -68,7 +64,6 @@ const Home = () => {
           </div>
         </div>
       </header>
-
       <section id="services" className="py-16 bg-gray-100 dark:bg-gray-900" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

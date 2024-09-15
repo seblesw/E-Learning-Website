@@ -32,7 +32,6 @@ const About = () => {
           className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
           data-aos="fade-up"
         >
-          {/* Left Side - Text Content */}
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
               About Our Company
@@ -49,7 +48,6 @@ const About = () => {
             </a>
           </div>
 
-          {/* Right Side - Image Gallery */}
           <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
             <div className="relative h-64 sm:h-80 lg:h-96 w-full overflow-hidden rounded-xl shadow-lg">
               {images.map((image, index) => (
@@ -67,11 +65,9 @@ const About = () => {
         </div>
       </header>
 
-      {/* Vision and Mission Section */}
       <section id="mission" className="py-16 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Mission */}
             <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Mission
@@ -81,7 +77,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Vision */}
             <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Vision
@@ -94,7 +89,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Values Section */}
       <section id="values" className="py-16 bg-gray-200 dark:bg-gray-800" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -139,7 +133,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founders Section */}
       <section id="founders" className="py-16 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -192,7 +185,6 @@ const About = () => {
                 <div className="w-48 h-48 mb-6 overflow-hidden rounded-full border-4 border-gray-200 dark:border-gray-700 shadow-lg">
                   <img
                     src={founder.image}
-                    // alt={founder.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -211,7 +203,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

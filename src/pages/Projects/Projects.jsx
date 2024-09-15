@@ -2,11 +2,10 @@ import React, { useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 const Projects = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Adjust the duration as needed
+      duration: 1200, 
     });
   }, []);
 
@@ -31,17 +30,17 @@ const Projects = () => {
               {
                 title: 'Project One',
                 description: 'Description of Project One.',
-                animation: 'fade-right', // AOS animation type
+                animation: 'fade-right', 
               },
               {
                 title: 'Project Two',
                 description: 'Description of Project Two.',
-                animation: 'fade-up', // AOS animation type
+                animation: 'fade-up', 
               },
               {
                 title: 'Project Three',
                 description: 'Description of Project Three.',
-                animation: 'fade-left', // AOS animation type
+                animation: 'fade-left', 
               },
             ].map((project, index) => (
               <div

@@ -6,13 +6,12 @@ import 'aos/dist/aos.css';
 const Blog = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Adjust the duration as needed
+      duration: 1200, 
     });
   }, []);
 
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Header Section */}
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
@@ -25,8 +24,6 @@ const Blog = () => {
           </p>
         </div>
       </header>
-
-      {/* Blog Posts Section */}
       <section className="py-16 bg-gray-100 dark:bg-gray-900"data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -34,17 +31,17 @@ const Blog = () => {
               {
                 title: 'Blog Post One',
                 description: 'Summary of Blog Post One.',
-                animation: 'fade-right', // AOS animation type
+                animation: 'fade-right', 
               },
               {
                 title: 'Blog Post Two',
                 description: 'Summary of Blog Post Two.',
-                animation: 'fade-up', // AOS animation type
+                animation: 'fade-up', 
               },
               {
                 title: 'Blog Post Three',
                 description: 'Summary of Blog Post Three.',
-                animation: 'fade-left', // AOS animation type
+                animation: 'fade-left', 
               },
             ].map((post, index) => (
               <div
@@ -67,7 +64,6 @@ const Blog = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

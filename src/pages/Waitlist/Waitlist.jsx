@@ -25,28 +25,27 @@ const Waitlist = () => {
 
     const googleFormActionURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdIS84AFCiKGXwXrFnTSgZTrLMVY1opUs_cYMDKO3yTLMVxwg/formResponse";
     const formBody = new URLSearchParams({
-      "entry.769960854": formData.name,  // Replace with your actual name field ID
-      "entry.531132485": formData.email, // Replace with your actual email field ID
+      "entry.769960854": formData.name,  
+      "entry.531132485": formData.email, 
     });
 
     try {
       await fetch(googleFormActionURL, {
         method: "POST",
-        mode: "no-cors", // Prevents CORS issues
+        mode: "no-cors", 
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: formBody.toString(),
       });
       setSuccessMessage("Thank you! You've been added to the waitlist.");
-      setFormData({ name: "", email: "" }); // Clear form
+      setFormData({ name: "", email: "" }); 
     } catch (error) {
       setErrorMessage("There was an error submitting the form. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden mt-6">
       <div className="md:w-1/2 bg-gray-100 dark:bg-gray-800 p-10 flex flex-col justify-center items-center text-center md:text-left">
@@ -141,5 +140,4 @@ const Waitlist = () => {
     </div>
   );
 };
-
 export default Waitlist;
