@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'react-feather';
-import hulu_lab_logo from "../../assets/hulu_lab_logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +22,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-3">
-              <img src={hulu_lab_logo} alt="Logo" className="w-12 h-12 rounded-full shadow-md" />
-              <span className="text-xl sm:text-2xl text-white font-serif font-bold">Hulu Labs</span>
+            <img src="/assets/hulu_logo.png" alt="Logo" className="w-12 h-12 rounded-full shadow-md" />
+            <span className="text-xl sm:text-2xl text-white font-serif font-bold">Hulu Labs</span>
             </a>
           </div>
 
