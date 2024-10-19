@@ -24,24 +24,22 @@ const About = () => {
 
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Header Section */}
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-whitedark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
         <div 
           className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
           data-aos="fade-up"
         >
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
-            <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
-              About Our Company
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+            About Hulu Software Labs PLC
             </h1>
             <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-300 font-serif">
-              Hulu Software Labs PLC was founded 5 years ago by Dr. Mekides Assefa and Dr. Amir Teshome. The company provides its services to the Ethiopian market and is fully licensed and tax registered under the Ethiopian administration.
-            </p>
+            Founded five years ago by visionary leaders Dr. Mekides Assefa and Dr. Amir Teshome, Hulu Software Labs PLC is a fully licensed and tax-compliant entity serving the Ethiopian market. We specialize in delivering innovative software solutions tailored to meet the unique needs of businesses in Ethiopia, with a steadfast commitment to excellence and regulatory compliance.            </p>
             <a
               href="#mission"
-              className="mt-8 inline-block bg-blue-500 dark:bg-teal-600 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
+              className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
               data-aos="zoom-in"
             >
               Learn More About Us
@@ -64,7 +62,6 @@ const About = () => {
           </div>
         </div>
       </header>
-
       <section id="mission" className="py-16 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -96,29 +93,28 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="mt-4 text-xl leading-7 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-serif">
-              The principles that guide us in our mission and vision.
-            </p>
+            The foundational principles that drive our mission to deliver excellence and shape our vision for sustainable growth, innovation, and client success.            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Integrity',
-                description: 'We uphold the highest standards of integrity in all our actions.',
+                description: 'We adhere to the highest ethical standards, ensuring transparency, honesty, and accountability in every action we take',
                 icon: 'fas fa-shield-alt',
               },
               {
                 title: 'Innovation',
-                description: 'We pursue new creative ideas that have the potential to change the world.',
+                description: 'We relentlessly seek out and implement groundbreaking ideas, driving transformative solutions that have the power to reshape industries and impact the world.',
                 icon: 'fas fa-lightbulb',
               },
               {
                 title: 'Customer Focus',
-                description: 'We are committed to providing the highest level of service to our customers.',
+                description: 'We are dedicated to delivering unparalleled service excellence, consistently exceeding customer expectations through tailored solutions and a commitment to long-term partnerships.',
                 icon: 'fas fa-user-friends',
               },
             ].map((value, index) => (
               <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   <i className={`${value.icon} text-2xl`}></i>
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
@@ -132,77 +128,82 @@ const About = () => {
           </div>
         </div>
       </section>
-
       <section id="founders" className="py-16 bg-white dark:bg-gray-900" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
-              Meet Our Founders
-            </h2>
-            <p className="mt-4 text-xl leading-7 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-serif">
-              The visionaries driving innovation and excellence at Hulu Labs PLC.
-            </p>
+  <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div className="text-center">
+      <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 drop-shadow-md font-sans">
+        Meet Our Founders
+      </h2>
+      <p className="mt-5 text-xl leading-8 text-gray-500 dark:text-gray-300 max-w-3xl mx-auto font-light">
+        Visionaries shaping the future of Hulu Labs PLC with innovation, leadership, and a commitment to excellence.
+      </p>
+    </div>
+    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      {[
+        {
+          name: 'Dr. Mekides Assefa',
+          title: 'Co-Founder & CEO',
+          image: 'assets/founders/mekides.jpg',
+          description:
+            'With a strong background in software engineering and business development, Dr. Mekides Assefa drives our innovation strategies and long-term vision.',
+        },
+        {
+          name: 'Dr. Amir Teshome',
+          title: 'Co-Founder & CTO',
+          image: 'assets/founders/amir.jpg',
+          description:
+            'Dr. Amir Teshome leads our technological initiatives, ensuring we stay ahead of the curve by adopting cutting-edge technologies and maintaining the highest technical standards.',
+        },
+       
+        {
+          name: 'Dr. Chalachew Temesgen',
+          title: 'Co-Founder',
+          image: 'assets/founders/chalachew.jpg',
+          description:
+            'With a deep commitment to excellence, Dr. Chalachew Temesgen ensures our projects maintain the highest standards of quality and innovation.',
+        },
+        {
+          name: 'Dr. Yilkal Andualem',
+          title: 'Co-Founder',
+          image: 'assets/founders/yilkal.jpg',
+          description:
+            'Focused on strategic growth and partnerships, Dr. Yilkal Andualem brings a unique perspective to driving our business expansion and industry influence.',
+        },
+        {
+          name: 'Ydnekachew',
+          title: 'Co-Founder & COO',
+          image: 'assets/founders/alemayehu.jpg',
+          description:
+            'Dr. Ydnekachew oversees operational excellence, ensuring that all business functions work harmoniously to deliver exceptional results for our clients.',
+        },
+      ].map((founder, index) => (
+        <div
+          key={index}
+          className="relative flex flex-col items-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          data-aos="zoom-in-up"
+        >
+          <div className="w-36 h-36 mb-4 overflow-hidden rounded-full border-4 border-gray-300 dark:border-gray-600 shadow-lg">
+            <img
+              src={founder.image}
+              // alt={`${founder.name}`}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {[
-              {
-                name: 'Dr. Mekides Assefa',
-                title: 'Co-Founder & CEO',
-                image: 'assets/founders/mekides.jpg',
-                description:
-                  'Dr. Mekides Assefa has been leading our company with a focus on innovation and strategic growth, bringing years of experience in software engineering and business development.',
-              },
-              {
-                name: 'Dr. Amir Teshome',
-                title: 'Co-Founder & CTO',
-                image: 'assets/founders/amir.jpg',
-                description:
-                  'With deep expertise in technology and a passion for innovation, Dr. Amir Teshome oversees the technical direction of our projects, ensuring the highest quality standards.',
-               
-              },
-              {
-                name: 'Dr. Yilkal Andualem',
-                title: 'Co-Founder',
-                image: 'assets/founders/yilkal.jpg',
-                description:
-                  'With deep expertise in technology and a passion for innovation, Dr. Yilkal Andualem brings a unique vision to the company, focusing on growth and strategic partnerships.',
-                
-              },
-              {
-                name: 'Dr. Chalachew Temesgen',
-                title: 'Co-Founder',
-                image: 'assets/founders/chalachew.jpg',
-                description:
-                  'Dr. Chalachew Temesgen ensures the highest quality in our projects, with a deep commitment to innovation and excellence in technology.',
-                
-              },
-            ].map((founder, index) => (
-              <div
-                key={index}
-                className="relative flex flex-col items-center bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 p-10 rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 transform hover:scale-105"
-                data-aos="zoom-in-up"
-              >
-                <div className="w-48 h-48 mb-6 overflow-hidden rounded-full border-4 border-gray-200 dark:border-gray-700 shadow-lg">
-                  <img
-                    src={founder.image}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-3xl font-semibold text-gray-800 dark:text-gray-100 mb-2 font-serif">
-                  {founder.name}
-                </h3>
-                <h4 className="text-xl text-blue-500 dark:text-teal-500 mb-4 font-serif">
-                  {founder.title}
-                </h4>
-                <p className="text-lg text-gray-600 dark:text-gray-300 text-center font-serif">
-                  {founder.description}
-                </p>
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-transparent to-blue-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
-              </div>
-            ))}
-          </div>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 font-sans">
+            {founder.name}
+          </h3>
+          <h4 className="text-lg text-teal-600 dark:text-teal-400 mb-3 font-medium">
+            {founder.title}
+          </h4>
+          <p className="text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed font-light">
+            {founder.description}
+          </p>
+          <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-teal-600 dark:to-teal-700 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
       <Footer />
     </div>
   );

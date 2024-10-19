@@ -49,7 +49,7 @@ const Waitlist = () => {
   return (
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden mt-6">
       <div className="md:w-1/2 bg-gray-100 dark:bg-gray-800 p-10 flex flex-col justify-center items-center text-center md:text-left">
-        <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-6 font-serif">
+        <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-6 font-serif">
           GET IN TOUCH <br /> WITH US
         </h2>
         <div className="text-lg text-gray-600 dark:text-gray-300 mb-6">
@@ -118,7 +118,7 @@ const Waitlist = () => {
           <button
             type="button"
             onClick={handleNext}
-            className={`w-full bg-gradient-to-r from-blue-500 to-teal-600 dark:from-teal-600 dark:to-teal-700 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`w-full bg-gradient-to-r from-blue-400 to-teal-600 dark:from-teal-600 dark:to-teal-700 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "JOIN THE WAITLIST"}

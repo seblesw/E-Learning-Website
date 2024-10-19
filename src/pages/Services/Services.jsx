@@ -34,15 +34,14 @@ const Services = () => {
   return (
     <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-md">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300 dark:hidden"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-white dark:hidden"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
         <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-20 lg:px-8 text-center" data-aos="fade-up">
-          <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-lg font-serif">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-lg font-serif">
             Our Services
           </h1>
-          <p className="mt-6 text-2xl leading-9 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-serif">
-            Discover the wide range of services we offer to empower your business.
-          </p>
+          <p className="mt-6 text-xl leading-9 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-serif">
+          We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.          </p>
         </div>
       </header>
       <section className="py-16 bg-gray-100 dark:bg-gray-900" id="services-section" data-aos="fade-up">
@@ -54,7 +53,7 @@ const Services = () => {
                 className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
                 data-aos={service.animation}
               >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
@@ -71,7 +70,7 @@ const Services = () => {
       </section>
       <section className="py-16 bg-gray-100 dark:bg-gray-900" id="services-overview" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6 font-serif">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 font-serif">
             Why Choose Our Services?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-8 max-w-3xl mx-auto font-serif">
@@ -81,7 +80,7 @@ const Services = () => {
       </section>
       <section className="py-16 bg-white dark:bg-gray-800" id="workflow-section" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 font-serif">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 font-serif">
             How It Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -103,7 +102,7 @@ const Services = () => {
               },
             ].map((step, index) => (
               <div key={index} className="flex flex-col items-center">
-                <div className="h-16 w-16 mb-6 rounded-full bg-blue-500 dark:bg-teal-600 text-white flex items-center justify-center shadow-lg">
+                <div className="h-16 w-16 mb-6 rounded-full bg-teal-500 dark:bg-teal-600 text-white flex items-center justify-center shadow-lg">
                   <i className={`${step.icon} text-2xl`}></i>
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">

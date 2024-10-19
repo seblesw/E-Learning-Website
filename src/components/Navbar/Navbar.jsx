@@ -12,25 +12,25 @@ const Navbar = () => {
 
   const getLinkClassName = (path) => {
     return location.pathname === path
-      ? "relative text-blue-300 text-lg transition-all duration-300 font-serif font-bold"
-      : "relative text-gray-200 hover:text-white text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gray-200 hover:after:bg-white after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold";
+      ? "relative text-teal-600 text-lg transition-all duration-300 font-serif font-bold"
+      : "relative text-gray-800 hover:text-teal-600 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-600 hover:after:bg-teal-600 after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold";
   };
 
   return (
-    <nav className="bg-gradient-to-r from-blue-800 via-teal-600 to-gray-900 dark:bg-gray-900 dark:text-white shadow-md">
+    <nav className="bg-gradient-to-r from-blue-200 via-teal-300 to-white dark:bg-gray-800 dark:text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-3">
-            <img src="/assets/hulu_logo.png" alt="Logo" className="w-12 h-12 rounded-full shadow-md" />
-            <span className="text-xl sm:text-2xl text-white font-serif font-bold">Hulu Labs</span>
+              <img src="/assets/hulu_logo.png" alt="Logo" className="w-12 h-12 rounded-full shadow-md" />
+              <span className="text-xl sm:text-2xl text-gray-800 font-serif font-bold">Hulu Labs</span>
             </a>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-gray-200 focus:outline-none"
+              className="text-gray-800 hover:text-teal-600 focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-3 bg-gradient-to-r from-blue-500 via-teal-600 to-gray-900 dark:bg-gray-900 p-4 rounded-lg shadow-md space-y-2">
+          <div className="md:hidden mt-3 bg-gradient-to-r from-blue-400 via-teal-300 to-white dark:bg-gray-800 p-4 rounded-lg shadow-md space-y-2">
             <div className="flex flex-col space-y-2">
               <Link to="/" onClick={handleLinkClick} className={getLinkClassName('/')}>
                 Home

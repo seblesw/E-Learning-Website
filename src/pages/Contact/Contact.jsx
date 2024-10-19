@@ -116,7 +116,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-500 to-teal-600 dark:from-teal-600 dark:to-teal-700 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+              className="w-full bg-gradient-to-r from-blue-400 to-teal-600 dark:from-teal-600 dark:to-teal-700 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
               data-aos="fade-up"
             >
               Send Message
