@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const images = [
-  'assets/hero/company.jpg',
+  'assets/hero/women.png',
 ];
 
 const About = () => {
@@ -35,7 +35,7 @@ const About = () => {
             <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
             About Hulu Software Labs PLC
             </h1>
-            <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-300 font-serif">
+            <p className="mt-4 text-lg leading-8 text-gray-700 dark:text-gray-300 font-serif">
             Founded five years ago by visionary leaders Dr. Mekides Assefa and Dr. Amir Teshome, Hulu Software Labs PLC is a fully licensed and tax-compliant entity serving the Ethiopian market. We specialize in delivering innovative software solutions tailored to meet the unique needs of businesses in Ethiopia, with a steadfast commitment to excellence and regulatory compliance.            </p>
             <a
               href="#mission"
@@ -66,19 +66,25 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+                <i className="fas fa-bullseye text-xl"></i> {/* Icon for Mission */}
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Mission
               </h2>
-              <p className="mt-4 text-xl leading-7 text-gray-600 dark:text-gray-300 font-serif">
+              <p className="mt-4 text-lg leading-7 text-gray-600 dark:text-gray-300 font-serif">
                 Our mission is to contribute to the global digital transformation process by providing digital solutions that automate and transform many of the day-to-day activities of the Ethiopian people. We differentiate ourselves by localizing and adapting state-of-the-art solutions to meet the unique needs of the local population.
               </p>
             </div>
 
             <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+                <i className="fas fa-eye text-2xl"></i> {/* Icon for Vision */}
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
                 Our Vision
               </h2>
-              <p className="mt-4 text-xl leading-7 text-gray-600 dark:text-gray-300 font-serif">
+              <p className="mt-4 text-lg leading-7 text-gray-600 dark:text-gray-300 font-serif">
                 Our vision is to be among the leading digital services providers in Ethiopia and across the Horn of Africa, bridging the gap for the international market to access local and marginalized East African societies.
               </p>
             </div>
@@ -131,10 +137,10 @@ const About = () => {
       <section id="founders" className="py-16 bg-white dark:bg-gray-900" data-aos="fade-up">
   <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div className="text-center">
-      <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 drop-shadow-md font-sans">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 drop-shadow-md font-serif">
         Meet Our Founders
       </h2>
-      <p className="mt-5 text-xl leading-8 text-gray-500 dark:text-gray-300 max-w-3xl mx-auto font-light">
+      <p className="mt-5 text-xl leading-8 text-gray-800 dark:text-gray-800 max-w-3xl mx-auto font-serif">
         Visionaries shaping the future of Hulu Labs PLC with innovation, leadership, and a commitment to excellence.
       </p>
     </div>
@@ -170,11 +176,11 @@ const About = () => {
             'Focused on strategic growth and partnerships, Dr. Yilkal Andualem brings a unique perspective to driving our business expansion and industry influence.',
         },
         {
-          name: 'Ydnekachew',
+          name: 'Ydnekachew Sime',
           title: 'Co-Founder & COO',
           image: 'assets/founders/alemayehu.jpg',
           description:
-            'Dr. Ydnekachew oversees operational excellence, ensuring that all business functions work harmoniously to deliver exceptional results for our clients.',
+            'Ydnekachew  Sime oversees operational excellence, ensuring that all business functions work harmoniously to deliver exceptional results for our clients.',
         },
       ].map((founder, index) => (
         <div
@@ -195,7 +201,7 @@ const About = () => {
           <h4 className="text-lg text-teal-600 dark:text-teal-400 mb-3 font-medium">
             {founder.title}
           </h4>
-          <p className="text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed font-light">
+          <p className="text-base text-gray-800 dark:text-gray-300 text-center leading-relaxed font-serif">
             {founder.description}
           </p>
           <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-teal-600 dark:to-teal-700 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>

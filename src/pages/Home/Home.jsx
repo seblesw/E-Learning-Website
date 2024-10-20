@@ -5,7 +5,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const images = [
-  'assets/hero/women.png',
+  'assets/hero/company.jpg', 
+  'assets/hero/sale.avif',
 ];
 
 const Home = () => {
@@ -18,24 +19,28 @@ const Home = () => {
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
-      <header className="relative bg-white overflow-hidden shadow-lg">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-white"></div>
+      <header className="relative bg-white overflow-hidden shadow-lg h-screen">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-white opacity-70"></div>
         <div 
-          className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
+          className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
           data-aos="fade-up"
         >
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 drop-shadow-md font-serif">
               Welcome to Hulu Labs
             </h1>
-            <p className="mt-4 text-xl leading-8 text-gray-700 font-serif">
+            <p className="mt-4 text-xl leading-8 text-gray-800 font-serif">
               Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth.
             </p>
             <a
@@ -46,22 +51,9 @@ const Home = () => {
               Discover Our Services
             </a>
           </div>
-          <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
-            <div className="relative h-64 sm:h-80 lg:h-96 w-full overflow-hidden rounded-xl shadow-lg">
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Gallery image ${index + 1}`}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </header>
+
       <section id="services" className="py-16 bg-white" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -76,17 +68,17 @@ const Home = () => {
             {[
               {
                 title: 'E-Commerce',
-                description: 'Our e-commerce business telegram mini app is a platform designed to facilitate the buying and selling of goods and services over the internet',
+                description: 'Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers',
                 icon: <Briefcase size={32} />,
               },
               {
                 title: 'Crypto Business',
-                description: 'Our crypto business involves the creation, management, or facilitation of services and products related to cryptocurrencies and blockchain technology.',
+                description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.',
                 icon: <Code size={32} />,
               },
               {
                 title: 'Hulu Pay',
-                description: 'Payment Solution associated with Hulu, a popular streaming service.',
+                description: 'Hulu Pay is a versatile payment solution that integrates with popular platforms like Tell Birr, M-Pesa, and USSD. Designed to offer secure, seamless transactions, it empowers users with convenient payment options, enhancing the overall customer experience.',
                 icon: <BarChart2 size={32} />,
               },
             ].map((service, index) => (
@@ -111,14 +103,17 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
       <section id="why-choose-us" className="py-16 bg-gray-50" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 drop-shadow-md font-serif">
-            Why choose Hulu Labs Technology?
+            What Makes Hulu Labs Technology Unique?
             </h2>
             <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-serif">
-            We are committed to delivering unparalleled quality and tailored solutions, ensuring our clients achieve lasting success and value.            </p>
+              
+Hulu Labs offers a comprehensive suite of solutions, including a cutting-edge e-commerce platform, versatile payment solutions, and innovative cryptocurrency services. Our offerings are designed to streamline online transactions, enhance payment flexibility, and empower businesses to thrive in the evolving digital economy
+            </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -153,6 +148,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Footer Component */}
       <Footer data-aos="fade-up" />
     </div>
   );
