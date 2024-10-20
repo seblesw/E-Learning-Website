@@ -11,6 +11,8 @@ import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Waitlist from './pages/Waitlist/Waitlist';
 import Contact from './pages/Contact/Contact';
+import './i18n'; // Import i18n configuration
+
 
 function App() {
 

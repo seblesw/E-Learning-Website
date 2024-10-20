@@ -67,17 +67,17 @@ const Home = () => {
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'E-Commerce',
+                title: 'Hulu Gebeya',
                 description: 'Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers',
                 icon: <Briefcase size={32} />,
               },
               {
-                title: 'Crypto Business',
+                title: 'Crypto Technology',
                 description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.',
                 icon: <Code size={32} />,
               },
               {
-                title: 'Hulu Pay',
+                title: 'Payment Solution',
                 description: 'Hulu Pay is a versatile payment solution that integrates with popular platforms like Tell Birr, M-Pesa, and USSD. Designed to offer secure, seamless transactions, it empowers users with convenient payment options, enhancing the overall customer experience.',
                 icon: <BarChart2 size={32} />,
               },

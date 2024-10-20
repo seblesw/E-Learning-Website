@@ -14,19 +14,19 @@ const Services = () => {
 
   const services = [
     {
-      title: 'E-Commerce',
+      title: 'Hulu Gebeya',
       description: 'Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers.',
       icon: <Briefcase size={32} />,
       animation: 'fade-right',
     },
     {
-      title: 'Crypto Business',
+      title: 'Crypto Technology',
       description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.',
       icon: <Code size={32} />,
       animation: 'fade-up',
     },
     {
-      title: 'Hulu Pay',
+      title: 'Payment Solution',
       description: 'Hulu Pay is a versatile payment solution that integrates with popular platforms like Tell Birr, M-Pesa, and USSD. Designed to offer secure, seamless transactions, it empowers users with convenient payment options, enhancing the overall customer experience.',
       icon: <BarChart2 size={32} />,
       animation: 'fade-left',
@@ -56,15 +56,15 @@ const Services = () => {
           <div className="flex justify-center mt-8 space-x-10">
             <div className="flex flex-col items-center">
               <ShoppingCart size={48} className="text-teal-500 dark:text-teal-400 mb-2" />
-              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif">E-Commerce</span>
+              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif">Hulu Gebeya</span>
             </div>
             <div className="flex flex-col items-center">
               <Globe size={48} className="text-teal-500 dark:text-teal-400 mb-2" />
-              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif">Crypto Solutions</span>
+              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif">Crypto Technology</span>
             </div>
             <div className="flex flex-col items-center">
               <Layers size={48} className="text-teal-500 dark:text-teal-400 mb-2" />
-              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif">Hulu Pay</span>
+              <span className="text-lg font-semibold text-gray-800 dark:text-gray-100 font-serif"> Payment Solution</span>
             </div>
           </div>
 
