@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'react-feather';
-import { FaGlobe } from 'react-icons/fa';
+import { FaFlag } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next'; 
 
 const Navbar = () => {
@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
 
             <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleLanguage}>
-              <FaGlobe size={20} className="text-gray-800 hover:text-teal-600" />
+              <FaFlag size={20} className="text-gray-800 hover:text-teal-600" />
               <span className="hidden sm:block text-gray-800 font-bold">
                 {i18n.language === 'en' ? 'EN' : 'አማ'}
               </span>
@@ -98,7 +98,7 @@ const Navbar = () => {
               </Link>
 
               <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleLanguage}>
-                <FaGlobe size={20} className="text-gray-800 hover:text-teal-600" />
+                <FaFlag size={20} className="text-gray-800 hover:text-teal-600" />
                 <span className="text-gray-800 font-bold">
                   {i18n.language === 'en' ? 'EN' : 'አማ'}
                 </span>

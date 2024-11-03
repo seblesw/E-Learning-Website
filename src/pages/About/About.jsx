@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const images = [
-  'assets/hero/women.png',
+  'assets/hero/hero2.webp',
 ];
 
 const About = () => {

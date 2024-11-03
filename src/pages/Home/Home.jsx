@@ -3,14 +3,16 @@ import Footer from '../../components/Footer/Footer';
 import { Briefcase, Code, BarChart2 } from 'react-feather';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 const images = [
   'assets/hero/company.jpg', 
-  'assets/hero/sale.avif',
+  'assets/hero/hero2.webp',
 ];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { t, i18n } = useTranslation(); 
 
   useEffect(() => {
     AOS.init({
@@ -38,17 +40,17 @@ const Home = () => {
         >
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-5xl font-bold text-gray-800 drop-shadow-md font-serif">
-              Welcome to Hulu Labs
+              {t('Welcome to Hulu Labs')}
             </h1>
             <p className="mt-4 text-xl leading-8 text-gray-800 font-serif">
-              Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth.
+              {t('Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth')}
             </p>
             <a
               href="#services"
               className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-4 px-12 text-lg font-bold text-white hover:from-blue-500 hover:to-teal-500 transition-transform transform hover:scale-105 shadow-md font-serif"
               data-aos="fade-up"
             >
-              Discover Our Services
+              {t('Discover Our Services')}
             </a>
           </div>
         </div>
@@ -58,10 +60,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 drop-shadow-md font-serif">
-              Our Services
+              {t('Our Services')}
             </h2>
             <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-serif">
-              We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.
+              {t('We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.')}
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
