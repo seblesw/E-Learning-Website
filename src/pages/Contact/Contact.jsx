@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from 'emailjs-com';
 import Footer from '../../components/Footer/Footer';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const Contact = () => {
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const { t, i18n } = useTranslation(); 
 
   useEffect(() => {
     AOS.init({
@@ -63,16 +65,13 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Contact Us Section */}
       <section id="contact" className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-center font-serif" data-aos="fade-up">
-            Get in Touch with Us
+          {t("get_in_touch_with_us")}
           </h2>
 
-          {/* Two-column layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column: Google Map */}
             <div className="rounded-lg overflow-hidden shadow-lg" data-aos="fade-right">
               <iframe
                 title="Google Map of Addis Ababa"

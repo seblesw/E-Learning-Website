@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'react-feather';
-import { FaFlag } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
+import { FaGlobe } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t, i18n } = useTranslation(); 
+  const [showLangOptions, setShowLangOptions] = useState(false);
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
   const handleLinkClick = () => {
     setIsOpen(false);
+    setShowLangOptions(false);
   };
 
   const getLinkClassName = (path) => {
@@ -19,9 +21,9 @@ const Navbar = () => {
       : "relative text-gray-800 hover:text-teal-600 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-600 hover:after:bg-teal-600 after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-serif font-bold";
   };
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'am' : 'en';
-    i18n.changeLanguage(newLang);
+  const toggleLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setShowLangOptions(false);
   };
 
   return (
@@ -66,11 +68,30 @@ const Navbar = () => {
               {t('waitlist')}
             </Link>
 
-            <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleLanguage}>
-              <FaFlag size={20} className="text-gray-800 hover:text-teal-600" />
+            <div 
+              className="relative flex items-center space-x-2 cursor-pointer" 
+              onClick={() => setShowLangOptions(!showLangOptions)}
+            >
+              <FaGlobe size={20} className="text-gray-800 hover:text-teal-600" />
               <span className="hidden sm:block text-gray-800 font-bold">
-                {i18n.language === 'en' ? 'EN' : 'አማ'}
+                {i18n.language.toUpperCase()}
               </span>
+              {showLangOptions && (
+                <div className="absolute top-8 mt-2 right-0 bg-white dark:bg-gray-700 shadow-lg rounded-md py-1 z-50">
+                  <button 
+                    onClick={() => toggleLanguage('en')} 
+                    className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
+                  >
+                    English
+                  </button>
+                  <button 
+                    onClick={() => toggleLanguage('am')} 
+                    className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
+                  >
+                    አማርኛ
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -97,12 +118,31 @@ const Navbar = () => {
                 {t('waitlist')}
               </Link>
 
-              <div className="flex items-center space-x-2 cursor-pointer" onClick={toggleLanguage}>
-                <FaFlag size={20} className="text-gray-800 hover:text-teal-600" />
+              <div 
+                className="flex items-center space-x-2 cursor-pointer" 
+                onClick={() => setShowLangOptions(!showLangOptions)}
+              >
+                <FaGlobe size={20} className="text-gray-800 hover:text-teal-600" />
                 <span className="text-gray-800 font-bold">
-                  {i18n.language === 'en' ? 'EN' : 'አማ'}
+                  {i18n.language.toUpperCase()}
                 </span>
               </div>
+              {showLangOptions && (
+                <div className="bg-white dark:bg-gray-700 shadow-lg rounded-md py-1">
+                  <button 
+                    onClick={() => toggleLanguage('en')} 
+                    className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
+                  >
+                    English
+                  </button>
+                  <button 
+                    onClick={() => toggleLanguage('am')} 
+                    className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
+                  >
+                    አማርኛ
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         )}

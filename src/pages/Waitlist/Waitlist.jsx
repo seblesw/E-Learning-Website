@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import Footer from "../../components/Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 const Waitlist = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const Waitlist = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { t, i18n } = useTranslation(); 
 
   const handleChange = (e) => {
     setFormData({
@@ -47,10 +50,11 @@ const Waitlist = () => {
     }
   };
   return (
+    <>
     <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden mt-6">
       <div className="md:w-1/2 bg-gray-100 dark:bg-gray-800 p-10 flex flex-col justify-center items-center text-center md:text-left">
         <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white mb-6 font-serif">
-          GET IN TOUCH <br /> WITH US
+          {t("get_in_touch_with_us")}
         </h2>
         <div className="text-lg text-gray-600 dark:text-gray-300 mb-6">
           <div className="flex items-center justify-center md:justify-start mb-4">
@@ -138,6 +142,8 @@ const Waitlist = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+</>
   );
 };
 export default Waitlist;

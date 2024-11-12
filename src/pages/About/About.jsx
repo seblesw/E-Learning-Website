@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 const images = [
   'assets/hero/hero2.webp',
@@ -9,6 +10,7 @@ const images = [
 
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { t, i18n } = useTranslation(); 
 
   useEffect(() => {
     AOS.init({
@@ -33,7 +35,7 @@ const About = () => {
         >
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
             <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
-            About Hulu Software Labs PLC
+            {t("about_hulu_software_labs")}
             </h1>
             <p className="mt-4 text-lg leading-8 text-gray-700 dark:text-gray-300 font-serif">
             Founded five years ago by visionary leaders Dr. Mekides Assefa and Dr. Amir Teshome, Hulu Software Labs PLC is a fully licensed and tax-compliant entity serving the Ethiopian market. We specialize in delivering innovative software solutions tailored to meet the unique needs of businesses in Ethiopia, with a steadfast commitment to excellence and regulatory compliance.            </p>
@@ -42,7 +44,7 @@ const About = () => {
               className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
               data-aos="zoom-in"
             >
-              Learn More About Us
+              {t("eplore_more_about_us")}
             </a>
           </div>
 

@@ -69,17 +69,17 @@ const Home = () => {
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'Hulu Gebeya',
-                description: 'Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers',
+                title: t('Hulu Gebeya'),
+                description:t('Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers'),
                 icon: <Briefcase size={32} />,
               },
               {
-                title: 'Crypto Technology',
+                title: t('Crypto Technology'),
                 description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.',
                 icon: <Code size={32} />,
               },
               {
-                title: 'Payment Solution',
+                title: t('Payment Solution'),
                 description: 'Hulu Pay is a versatile payment solution that integrates with popular platforms like Tell Birr, M-Pesa, and USSD. Designed to offer secure, seamless transactions, it empowers users with convenient payment options, enhancing the overall customer experience.',
                 icon: <BarChart2 size={32} />,
               },
@@ -105,7 +105,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
       <section id="why-choose-us" className="py-16 bg-gray-50" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -150,7 +149,6 @@ Hulu Labs offers a comprehensive suite of solutions, including a cutting-edge e-
         </div>
       </section>
 
-      {/* Footer Component */}
       <Footer data-aos="fade-up" />
     </div>
   );
