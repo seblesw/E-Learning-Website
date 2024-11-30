@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
-import { Briefcase, Code, BarChart2 } from 'react-feather';
+import { Briefcase, Code, BarChart2, ShoppingCart } from 'react-feather';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
+import { MdAccountBalanceWallet, MdPayment, MdSecurity } from 'react-icons/md';
+import { FiCreditCard, FiShield } from 'react-icons/fi';
+import { FaWallet } from 'react-icons/fa';
+import { BiMoney } from 'react-icons/bi';
 
 const images = [
-  'assets/hero/company.jpg', 
   'assets/hero/hero2.webp',
 ];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { t, i18n } = useTranslation(); 
+  const { t } = useTranslation(); 
 
   useEffect(() => {
     AOS.init({
@@ -25,6 +28,28 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const services = [
+    {
+      title: t('Hulu Gebeya'),
+      description: t('hulugebeya_description'),
+      icon: <ShoppingCart size={32} />,
+      link: 'https://t.me/EcommerceTMA_bot'
+    },
+    {
+      title: t('Crypto Technology'),
+      description: t('Our crypto business description'),
+      icon: <FiShield size={32} />,
+      link: 'https://t.me/EcommerceTMA_bot'
+
+    },
+    {
+      title: t('Payment Solution'),
+      description: t('hulupayment description'),
+      icon: <MdAccountBalanceWallet size={32} />,
+      link: 'https://t.me/EcommerceTMA_bot'
+    },
+  ];
 
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
@@ -67,25 +92,11 @@ const Home = () => {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: t('Hulu Gebeya'),
-                description:t('Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers'),
-                icon: <Briefcase size={32} />,
-              },
-              {
-                title: t('Crypto Technology'),
-                description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.',
-                icon: <Code size={32} />,
-              },
-              {
-                title: t('Payment Solution'),
-                description: 'Hulu Pay is a versatile payment solution that integrates with popular platforms like Tell Birr, M-Pesa, and USSD. Designed to offer secure, seamless transactions, it empowers users with convenient payment options, enhancing the overall customer experience.',
-                icon: <BarChart2 size={32} />,
-              },
-            ].map((service, index) => (
-              <div
+            {services.map((service, index) => (
+              <a
                 key={index}
+                href={service.link}
+                rel="noopener noreferrer"
                 className="relative flex flex-col bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
                 data-aos="zoom-in-up"
               >
@@ -98,8 +109,10 @@ const Home = () => {
                 <p className="text-lg text-gray-600 font-serif">
                   {service.description}
                 </p>
+                 <span className='text-blue-800 font-serif font-bold'>{t('view_details')}</span>
+
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -109,26 +122,24 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-800 drop-shadow-md font-serif">
-            What Makes Hulu Labs Technology Unique?
+              {t("what_makes_unique")}
             </h2>
             <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-serif">
-              
-Hulu Labs offers a comprehensive suite of solutions, including a cutting-edge e-commerce platform, versatile payment solutions, and innovative cryptocurrency services. Our offerings are designed to streamline online transactions, enhance payment flexibility, and empower businesses to thrive in the evolving digital economy
-            </p>
+            {t("what_makes_unique_description")}            </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: 'Experience',
-                description: 'Over 5 years of industry experience.',
+                title: t('Experience'),
+                description: t('describe_exprience'),
               },
               {
-                title: 'Quality',
-                description: 'We deliver high-quality solutions tailored to your needs.',
+                title: t('Quality'),
+                description: t('Quality_Desription'),
               },
               {
-                title: 'Support',
-                description: '24/7 customer support to ensure your success.',
+                title: t('Support'),
+                description: t('customer_support'),
               },
             ].map((benefit, index) => (
               <div

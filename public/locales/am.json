@@ -14,11 +14,24 @@
     "Hulu Gebeya":"ሁሉ ገበያ",
     "Crypto Technology":"ክሪፕቶ ቴክኖሎጂ",
     "Payment Solution":"የክፍያ መፍትሔ",
-    "Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online. It offers seamless integration, user-friendly navigation, and secure transactions, ensuring a smooth and efficient experience for both buyers and sellers":"የእኛ የኢ-ኮሜርስ ንግድ ቴሌግራም ሚኒ መተግበሪያ በመስመር ላይ የሸቀጦች እና አገልግሎቶችን ግዢ እና ሽያጭ ለማቀላጠፍ እና ለማሻሻል የተበጀ ተለዋዋጭ መድረክ ነው። እንከን የለሽ ውህደትን፣ ለተጠቃሚ ምቹ አሰሳ እና ደህንነታቸው የተጠበቁ ግብይቶችን ያቀርባል፣ ይህም ለገዢዎች እና ሻጮች ምቹ እና ቀልጣፋ ተሞክሮን ያረጋግጣል",
-    "Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space, offering secure and efficient solutions tailored to the evolving digital asset landscape.":"የእኛ የ crypto ንግድ በምስጠራ እና በብሎክቼይን ቦታ ላይ አዳዲስ አገልግሎቶችን እና ምርቶችን በማዳበር፣ በማስተዳደር እና በማመቻቸት ላይ ያተኩራል፣ ይህም አስተማማኝ እና ቀልጣፋ መፍትሄዎችን በማደግ ላይ ላለው ዲጂታል ንብረት ገጽታ ተስማሚ ነው",
     "about_hulu_software_labs":"ስለ ሁሉ ላብ ሶፍትዌር ላብ ",
     "eplore_more_about_us":"ስለእኛ ተጨማሪ ይዩ",
     "our_services":"የእኛ አገልግሎት",
-    "get_in_touch_with_us":"ከእኛ ጋር ይገናኙ"
+    "get_in_touch_with_us":"ከእኛ ጋር ይገናኙ",
+    "view_details":"እያንዳንዱን አገልግሎት ይጎብኙ",
+    "Our crypto business description":"የእኛ ክሪፕቶ ንግድ በ ክሪፕቶ ከረንሲ እና ብሎክቸን ውስጥ ፈጠራ አገልግሎቶችን እና ምርቶችን በማዳበር፣ በማስተዳደር እና በማመቻቸት ላይ ያተኩራል፣ ለተሻሻለው ዲጂታል ንብረት ገጽታ ተስማሚ እና ቀልጣፋ መፍትሄዎችን ይሰጣል።",
+    "hulupayment description":"ሁሉ ፔይ እንደ ቴል ብር፣ ኤም-ፔሳ እና ዩኤስኤስዲ ካሉ ታዋቂ መድረኮች ጋር የተዋሃደ ሁለገብ የክፍያ መፍትሄ ነው። ደህንነቱ የተጠበቀ፣ እንከን የለሽ ግብይቶችን ለማቅረብ የተነደፈ፣ ተጠቃሚዎችን ምቹ የመክፈያ አማራጮችን ያበረታታል፣ አጠቃላይ የደንበኞችን ልምድ ያሳድጋል።",
+    "hulugebeya_description":"የእኛ የኢ-ኮሜርስ ንግድ ቴሌግራም ሚኒ መተግበሪያ በመስመር ላይ የሸቀጦች እና አገልግሎቶችን ግዢ እና ሽያጭ ለማቀላጠፍ እና ለማሻሻል የተበጀ ተለዋዋጭ መድረክ ነው። እንከን የለሽ ውህደትን፣ ለተጠቃሚ ምቹ አሰሳ እና ደህንነታቸው የተጠበቁ ግብይቶችን ያቀርባል፣ ይህም ለገዢ እና ሻጭ ለሁለቱም ለስላሳ እና ቀልጣፋ ተሞክሮን ያረጋግጣል።",
+    "what_makes_unique":"ሁሉ ላቭ ቴክኖሎጂን ልዩ የሚያደርገው ምንድን ነው?",
+    "what_makes_unique_description":"ሁሉ ላቭ እጅግ በጣም ጥሩ የሆነ የኢ-ኮሜርስ መድረክን፣ ሁለገብያ የክፍያ መፍትሄዎችን እና የፈጠራ ክሪፕቶፕ አገልግሎቶችን ጨምሮ አጠቃላይ የመፍትሄዎች ስብስብ ያቀርባል። የእኛ አቅርቦቶች የመስመር ላይ ግብይቶችን ለማሳለጥ፣ የክፍያ ተለዋዋጭነትን ለማጎልበት እና ንግዶች በማደግ ላይ ባለው ዲጂታል ኢኮኖሚ ውስጥ እንዲበለጽጉ ለማድረግ የተነደፉ ናቸው።",
+    "Experience":"ልምድ",
+    "describe_exprience":"ከ 5 ዓመታት በላይ የኢንዱስትሪ ያካበተ ነው፡፡",
+    "Quality":"ጥራት",
+    "Quality_Desription":"ለፍላጎትዎ የተዘጋጁ ከፍተኛ ጥራት ያላቸውን መፍትሄዎችን እናቀርባለን።",
+    "Support":"ድጋፍ",
+    "customer_support":""
+
   }
+
+  
   

@@ -21,21 +21,21 @@ const Services = () => {
       description: 'Our e-commerce business Telegram mini-app is a dynamic platform tailored to streamline and enhance the buying and selling of goods and services online.',
       icon: <Briefcase size={32} />,
       animation: 'fade-right',
-      link: 'https://t.me/miniapp_request_form_bot?startapp'
+      link: 'https://t.me/EcommerceTMA_bot'
     },
     {
       title: 'Crypto Technology',
       description: 'Our crypto business focuses on developing, managing, and facilitating innovative services and products in the cryptocurrency and blockchain space.',
       icon: <Code size={32} />,
       animation: 'fade-up',
-      link: 'https://t.me/miniapp_request_form_bot?startapp'
+      link: 'https://t.me/EcommerceTMA_bot'
     },
     {
       title: 'Payment Solution',
       description: 'Hulu Pay is a versatile payment solution that integrates with platforms like Tell Birr, M-Pesa, and USSD.',
       icon: <BarChart2 size={32} />,
       animation: 'fade-left',
-      link: 'https://t.me/miniapp_request_form_bot?startapp'
+      link: 'https://t.me/EcommerceTMA_bot'
     },
   ];
 

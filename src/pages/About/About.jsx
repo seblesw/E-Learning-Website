@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
 
 const images = [
-  'assets/hero/hero2.webp',
+  'assets/hero/company.jpg', 
 ];
 
 const About = () => {
