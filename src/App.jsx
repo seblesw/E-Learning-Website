@@ -12,6 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Waitlist from './pages/Waitlist/Waitlist';
 import Contact from './pages/Contact/Contact';
 import './i18n'; // Import i18n configuration
+import MerchantForm from './pages/MerchantForm/merchantForm';
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/waitlist" element={<Waitlist />} />
+        <Route path="/Merchant Form" element={<MerchantForm />} />
+
       </Routes>
     </Router>
   );

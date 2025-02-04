@@ -67,6 +67,9 @@ const Navbar = () => {
             <Link to="/waitlist" className={getLinkClassName('/waitlist')}>
               {t('waitlist')}
             </Link>
+            <Link to="/Merchant Form" className={getLinkClassName('/Merchant Form')}>
+              {t('Merchant Form')}
+            </Link>
 
             <div 
               className="relative flex items-center space-x-2 cursor-pointer" 
@@ -117,7 +120,9 @@ const Navbar = () => {
               <Link to="/waitlist" onClick={handleLinkClick} className={getLinkClassName('/waitlist')}>
                 {t('waitlist')}
               </Link>
-
+              <Link to="/Merchant Form" className={getLinkClassName('/Merchant Form')}>
+              {t('Merchant Form')}
+            </Link>
               <div 
                 className="flex items-center space-x-2 cursor-pointer" 
                 onClick={() => setShowLangOptions(!showLangOptions)}
