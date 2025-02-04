@@ -107,6 +107,7 @@ const MerchantForm = () => {
     <div className="max-w-lg mx-auto p-6 mt-16 bg-white shadow-md rounded-xl">
       <h2 className="text-xl font-bold mb-4">Merchant Selection Criteria Form</h2>
       <div className="mb-4 text-center text-gray-600">Step {step} of {formSections.length}</div>
+      <h3 className="text-lg font-semibold text-center mb-4">{formSections[step - 1].category}</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         {formSections[step - 1].fields.map(({ name, type, options, placeholder }) => (
           <div key={name}>
