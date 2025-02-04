@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../../components/Footer/Footer';
-import { Briefcase, Code, BarChart2, ShoppingCart } from 'react-feather';
+import { ShoppingCart } from 'react-feather';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
-import { MdAccountBalanceWallet, MdPayment, MdSecurity } from 'react-icons/md';
-import { FiCreditCard, FiShield } from 'react-icons/fi';
-import { FaWallet } from 'react-icons/fa';
-import { BiMoney } from 'react-icons/bi';
+import { MdAccountBalanceWallet  } from 'react-icons/md';
+import { FiShield } from 'react-icons/fi';
 
 const images = [
   'assets/hero/hero2.webp',
