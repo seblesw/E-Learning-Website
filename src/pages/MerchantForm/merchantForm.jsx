@@ -18,8 +18,8 @@ const MerchantForm = () => {
     productAvailability: "",
     customerBaseSize: "",
     targetDemographics: "",
-    logisticsCapability: "",
-    paymentMethods: [],
+    logisticsCapability: [], 
+    paymentMethods: [], 
     onlinePresence: "",
     marketingExperience: "",
     ecommercePlatformUsage: "",
@@ -31,13 +31,50 @@ const MerchantForm = () => {
     flexibility: "",
     supportNeeded: ""
   });
+  const scoreMapping = {
+    registrationStatus: { "Registered": 5, "Not Registered": 0 },
+    primaryLocation: { "primaryLocation":5 },
+    businessType: { "Retail": 8, "Wholesale": 7, "Manufacturing": 9, "Service": 6, "Other": 5 },
+    productsOffered: { "Producer": 10, "Re-seller": 5 },
+    priceRange: { "Low Cost": 1, "Mid Range": 3, "High End": 5 },
+    productAvailability: { "Available": 25, "Limited": 20, "Seasonal": 15 },
+    logisticsCapability: { "In-house": 10, "Partnered": 8, "Pickup": 5 },
+    paymentMethods: { "Cash": 5, "Mobile Money": 10, "Card": 8 },
+    onlinePresence: { "facebook": 7, "telegram": 8, "instagram": 6 },
+    telegramBusinessTools: { "High": 10, "Medium": 7, "Low": 4 },
+    digitalPaymentSystems: { "Yes": 10, "No": 5 },
+    customerAlignment: { "Yes": 10, "No": 5 },
+    promotionalStrategy: { "Discount": 10, "BOGO Offers": 8, "Free Delivery Promotions": 7 },
+    collaborationInterest: { "Yes": 10, "No": 5 },
+    flexibility: { "High": 10, "Moderate": 7, "Low": 4 },
+    supportNeeded: { "Financial Support": 5, "Training": 7 },
+  };
+  const calculateScore = () => {
+    let totalScore = 0;
+    Object.keys(formData).forEach((key) => {
+      const value = formData[key];
 
+      if (Array.isArray(value)) {
+        // Handle multi-select fields (checkboxes)
+        value.forEach((item) => {
+          totalScore += scoreMapping[key]?.[item] || 0;
+        });
+      } else {
+        // Handle single-select fields
+        totalScore += scoreMapping[key]?.[value] || 0;
+      }
+    });
+    return totalScore;
+  };
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+  
     if (type === "checkbox") {
       setFormData((prev) => ({
         ...prev,
-        [name]: checked ? [...prev[name], value] : prev[name].filter((v) => v !== value)
+        [name]: checked
+          ? [...(prev[name] || []), value] // Add value if checked
+          : prev[name].filter((item) => item !== value) // Remove value if unchecked
       }));
     } else {
       setFormData({ ...formData, [name]: value });
@@ -46,9 +83,9 @@ const MerchantForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    const finalScore = calculateScore();
+    alert(`Form Submitted!\nYour total score is: ${finalScore}/100\nThank you for your submission.`);
   };
-
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
@@ -75,9 +112,9 @@ const MerchantForm = () => {
       category: "Product / Sale Info",
       fields: [
         { name: "businessType", type: "select", options: ["Retail", "Wholesale", "Manufacturing", "Service", "Other"], placeholder: "Select Business Type" },
-        { name: "productsOffered", type: "text", placeholder: "Products/Services Offered" },
+        { name: "productsOffered", type: "select", options: ["Producer", "Re-seller"], placeholder: "Select products Offered" },
         { name: "monthlySalesVolume", type: "number", placeholder: "Average Monthly Sales Volume" },
-        { name: "priceRange", type: "text", placeholder: "Price Range of Products" },
+        { name: "priceRange", type: "select", options:["Low Cost","Mid Range","HIgh End"], placeholder: " select Price Range of Products" },
         { name: "productAvailability", type: "radio", options: ["Available", "Limited", "Seasonal"], placeholder: "Product Availability" }
       ]
     },
@@ -91,12 +128,12 @@ const MerchantForm = () => {
     {
       category: "Operation / Marketing",
       fields: [
-        { name: "logisticsCapability", type: "text", placeholder: "Logistics and Delivery Capability" },
-        { name: "paymentMethods", type: "checkbox", options: ["Cash", "Mobile Money", "Card"], placeholder: "Preferred Payment Methods" },
-        { name: "onlinePresence", type: "radio", options: ["Yes", "No"], placeholder: "Online Presence" },
+        { name: "logisticsCapability", type: "checkbox", options: ["In-house", "Partnered ", "Pickup"], placeholder: " select Logistics and Delivery Capability" },
+        { name: "paymentMethods", type: "checkbox", options: ["Cash", "Mobile Money", "Card"], placeholder: " cheack Preferred Payment Methods" },
+        { name: "onlinePresence", type: "select", options: ["facebook", "telegram", "instagram"], placeholder: " select online Presence" },
         { name: "marketingExperience", type: "text", placeholder: "Marketing Experience" },
-        { name: "ecommercePlatformUsage", type: "text", placeholder: "Existing eCommerce Platform Usage" },
-        { name: "telegramBusinessTools", type: "radio", options: ["Yes", "No"], placeholder: "Familiarity with Telegram Business Tools" },
+        { name: "ecommercePlatformUsage", type: "text", placeholder: "Specify platform names, if any" },
+        { name: "telegramBusinessTools", type: "select", options: ["High", "Medium", "Low"], placeholder: " select level of Familiarity with Telegram Business Tools" },
         { name: "digitalPaymentSystems", type: "radio", options: ["Yes", "No"], placeholder: "Use of Digital Payment Systems" }
       ]
     },
@@ -104,10 +141,10 @@ const MerchantForm = () => {
       category: "Ease of Doing Business",
       fields: [
         { name: "customerAlignment", type: "radio", options: ["Yes", "No"], placeholder: "Alignment with Our Customer Base" },
-        { name: "promotionalStrategy", type: "text", placeholder: "Promotional Strategy Compatibility" },
+        { name: "promotional Strategy", type: "select", options:["Discount","BOGO Offers","Free Delivery Promotions"], placeholder: "Select Strategy" },
         { name: "collaborationInterest", type: "radio", options: ["Yes", "No"], placeholder: "Interest in Collaboration" },
         { name: "flexibility", type: "radio", options: ["High", "Moderate", "Low"], placeholder: "Flexibility" },
-        { name: "supportNeeded", type: "text", placeholder: "Support Needed" }
+        { name: "supportNeeded", type: "select", options:["Finacial Support","Traning"], placeholder: " select Support Needed" },
       ]
     }
   ];
@@ -132,7 +169,14 @@ const MerchantForm = () => {
               <div>
                 {options.map((option) => (
                   <label key={option} className="inline-flex items-center space-x-2 mr-4">
-                    <input type={type} name={name} value={option} checked={formData[name] === option} onChange={handleChange} required />
+                    <input
+                      type={type}
+                      name={name}
+                      value={option}
+                      checked={type === "checkbox" ? formData[name]?.includes(option) : formData[name] === option}
+                      onChange={handleChange}
+                      required
+                    />
                     <span>{option}</span>
                   </label>
                 ))}
