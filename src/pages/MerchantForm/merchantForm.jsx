@@ -5,7 +5,9 @@ const MerchantForm = () => {
   const [formData, setFormData] = useState({
     businessName: "",
     ownerName: "",
-    contactDetails: "",
+    phone: "",
+    email: "",
+    socialMedia: "",
     yearsOfOperation: "",
     registrationStatus: "",
     primaryLocation: "",
@@ -56,16 +58,23 @@ const MerchantForm = () => {
       fields: [
         { name: "businessName", type: "text", placeholder: "Enter Business Name" },
         { name: "ownerName", type: "text", placeholder: "Enter Owner/Manager Name" },
-        { name: "contactDetails", type: "text", placeholder: "Phone, Email, Social Media" },
         { name: "yearsOfOperation", type: "number", placeholder: "Years of Operation" },
         { name: "registrationStatus", type: "radio", options: ["Registered", "Not Registered"], placeholder: "Business Registration Status" },
         { name: "primaryLocation", type: "text", placeholder: "Primary Location" }
       ]
     },
     {
+      category: "Contact Details",
+      fields: [
+        { name: "phone", type: "text", placeholder: "Phone Number" },
+        { name: "email", type: "email", placeholder: "Email Address" },
+        { name: "socialMedia", type: "text", placeholder: "Social Media Links" }
+      ]
+    },
+    {
       category: "Product / Sale Info",
       fields: [
-        { name: "businessType", type: "text", placeholder: "Type of Business" },
+        { name: "businessType", type: "select", options: ["Retail", "Wholesale", "Manufacturing", "Service", "Other"], placeholder: "Select Business Type" },
         { name: "productsOffered", type: "text", placeholder: "Products/Services Offered" },
         { name: "monthlySalesVolume", type: "number", placeholder: "Average Monthly Sales Volume" },
         { name: "priceRange", type: "text", placeholder: "Price Range of Products" },
