@@ -64,9 +64,9 @@ const Navbar = () => {
             <Link to="/contact" className={getLinkClassName('/contact')}>
               {t('contact')}
             </Link>
-            <Link to="/waitlist" className={getLinkClassName('/waitlist')}>
+            {/* <Link to="/waitlist" className={getLinkClassName('/waitlist')}>
               {t('waitlist')}
-            </Link>
+            </Link> */}
             <Link to="/Merchant Form" className={getLinkClassName('/Merchant Form')}>
               {t('Merchant Form')}
             </Link>
@@ -117,9 +117,9 @@ const Navbar = () => {
               <Link to="/contact" onClick={handleLinkClick} className={getLinkClassName('/contact')}>
                 {t('contact')}
               </Link>
-              <Link to="/waitlist" onClick={handleLinkClick} className={getLinkClassName('/waitlist')}>
+              {/* <Link to="/waitlist" onClick={handleLinkClick} className={getLinkClassName('/waitlist')}>
                 {t('waitlist')}
-              </Link>
+              </Link> */}
               <Link to="/Merchant Form" className={getLinkClassName('/Merchant Form')}>
               {t('Merchant Form')}
             </Link>

@@ -81,11 +81,66 @@ const MerchantForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const finalScore = calculateScore();
-    alert(`Form Submitted!\nYour total score is: ${finalScore}/100\nThank you for your submission.`);
+  
+    const submissionData = { ...formData, finalScore };
+  
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbykH_RcW4aAlSn0_jWv0ZobRGN5QYKbpOm9W_em7wvVJMob0APwSHPC2neA0wuM1aLW0w/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submissionData),
+        }
+      );
+  
+      alert(`Form Submitted!\nYour total score is: ${finalScore}/100\nThank you for your submission.`);
+  
+      // Reset form fields and step count
+      setFormData({
+        businessName: "",
+        ownerName: "",
+        phone: "",
+        email: "",
+        socialMedia: "",
+        yearsOfOperation: "",
+        registrationStatus: "",
+        primaryLocation: "",
+        businessType: "",
+        productsOffered: "",
+        monthlySalesVolume: "",
+        priceRange: "",
+        productAvailability: "",
+        customerBaseSize: "",
+        targetDemographics: "",
+        logisticsCapability: [], // Fixed: Reset array fields properly
+        paymentMethods: [],
+        onlinePresence: "",
+        marketingExperience: "",
+        ecommercePlatformUsage: "",
+        telegramBusinessTools: "",
+        digitalPaymentSystems: "",
+        customerAlignment: "",
+        promotionalStrategy: "", // Fixed: Corrected typo
+        collaborationInterest: "",
+        flexibility: "",
+        supportNeeded: "",
+      });
+  
+      setStep(1); // Reset to the first step
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error submitting the form. Please try again.");
+    }
   };
+  
+  
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
@@ -141,7 +196,7 @@ const MerchantForm = () => {
       category: "Ease of Doing Business",
       fields: [
         { name: "customerAlignment", type: "radio", options: ["Yes", "No"], placeholder: "Alignment with Our Customer Base" },
-        { name: "promotional Strategy", type: "select", options:["Discount","BOGO Offers","Free Delivery Promotions"], placeholder: "Select Strategy" },
+        { name: "promotionalStrategy", type: "select", options: ["Discount", "BOGO Offers", "Free Delivery Promotions"], placeholder: "Select Strategy" },
         { name: "collaborationInterest", type: "radio", options: ["Yes", "No"], placeholder: "Interest in Collaboration" },
         { name: "flexibility", type: "radio", options: ["High", "Moderate", "Low"], placeholder: "Flexibility" },
         { name: "supportNeeded", type: "select", options:["Finacial Support","Traning"], placeholder: " select Support Needed" },
@@ -186,6 +241,7 @@ const MerchantForm = () => {
             )}
           </div>
         ))}
+      <div className="text-center text-blue-600 font-bold">Current Score: {calculateScore()} / 100</div>
         <div className="flex justify-between mt-4">
           {step > 1 && <button type="button" className="bg-gray-600 text-white py-2 px-4 rounded" onClick={prevStep}>Previous</button>}
           {step < formSections.length ? <button type="button" className="bg-blue-500 text-white py-2 px-4 rounded" onClick={nextStep}>Next</button> : <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded">Submit</button>}
