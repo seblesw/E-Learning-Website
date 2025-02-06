@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const MerchantForm = () => {
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false); // Loading state
   const [formData, setFormData] = useState({
     businessName: "",
     ownerName: "",
@@ -18,8 +19,8 @@ const MerchantForm = () => {
     productAvailability: "",
     customerBaseSize: "",
     targetDemographics: "",
-    logisticsCapability: [], 
-    paymentMethods: [], 
+    logisticsCapability: [],
+    paymentMethods: [],
     onlinePresence: "",
     marketingExperience: "",
     ecommercePlatformUsage: "",
@@ -31,9 +32,10 @@ const MerchantForm = () => {
     flexibility: "",
     supportNeeded: ""
   });
+
   const scoreMapping = {
     registrationStatus: { "Registered": 5, "Not Registered": 0 },
-    primaryLocation: { "primaryLocation":5 },
+    primaryLocation: { "primaryLocation": 5 },
     businessType: { "Retail": 8, "Wholesale": 7, "Manufacturing": 9, "Service": 6, "Other": 5 },
     productsOffered: { "Producer": 10, "Re-seller": 5 },
     priceRange: { "Low Cost": 1, "Mid Range": 3, "High End": 5 },
@@ -49,32 +51,30 @@ const MerchantForm = () => {
     flexibility: { "High": 10, "Moderate": 7, "Low": 4 },
     supportNeeded: { "Financial Support": 5, "Training": 7 },
   };
+
   const calculateScore = () => {
     let totalScore = 0;
     Object.keys(formData).forEach((key) => {
       const value = formData[key];
 
       if (Array.isArray(value)) {
-        // Handle multi-select fields (checkboxes)
         value.forEach((item) => {
           totalScore += scoreMapping[key]?.[item] || 0;
         });
       } else {
-        // Handle single-select fields
         totalScore += scoreMapping[key]?.[value] || 0;
       }
     });
     return totalScore;
   };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-  
+
     if (type === "checkbox") {
       setFormData((prev) => ({
         ...prev,
-        [name]: checked
-          ? [...(prev[name] || []), value] // Add value if checked
-          : prev[name].filter((item) => item !== value) // Remove value if unchecked
+        [name]: checked ? [...(prev[name] || []), value] : prev[name].filter((item) => item !== value),
       }));
     } else {
       setFormData({ ...formData, [name]: value });
@@ -83,26 +83,26 @@ const MerchantForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) return; // Prevent duplicate submission
+    setLoading(true); // Start loading
+
     const finalScore = calculateScore();
-  
     const submissionData = { ...formData, finalScore };
-  
+
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbykH_RcW4aAlSn0_jWv0ZobRGN5QYKbpOm9W_em7wvVJMob0APwSHPC2neA0wuM1aLW0w/exec",
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbx9xYsuKwEXx9mbfjJJLcbn_sZCZk3vPDAL_Fr7iYpbSa33Srw54BAQCVBCQL9tz61UMQ/exec",
         {
           method: "POST",
           mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(submissionData),
         }
       );
-  
+
       alert(`Form Submitted!\nYour total score is: ${finalScore}/100\nThank you for your submission.`);
-  
-      // Reset form fields and step count
+
       setFormData({
         businessName: "",
         ownerName: "",
@@ -119,7 +119,7 @@ const MerchantForm = () => {
         productAvailability: "",
         customerBaseSize: "",
         targetDemographics: "",
-        logisticsCapability: [], // Fixed: Reset array fields properly
+        logisticsCapability: [],
         paymentMethods: [],
         onlinePresence: "",
         marketingExperience: "",
@@ -127,23 +127,23 @@ const MerchantForm = () => {
         telegramBusinessTools: "",
         digitalPaymentSystems: "",
         customerAlignment: "",
-        promotionalStrategy: "", // Fixed: Corrected typo
+        promotionalStrategy: "",
         collaborationInterest: "",
         flexibility: "",
         supportNeeded: "",
       });
-  
-      setStep(1); // Reset to the first step
+
+      setStep(1);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
-  
-  
+
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
-
   const formSections = [
     {
       category: "Business Info",
@@ -203,14 +203,13 @@ const MerchantForm = () => {
       ]
     }
   ];
-
   return (
     <div className="max-w-lg mx-auto p-6 mt-16 bg-white shadow-md rounded-xl">
       <h2 className="text-xl font-bold mb-4">Merchant Selection Criteria Form</h2>
-      <div className="mb-4 text-center text-gray-600">Step {step} of {formSections.length}</div>
-      <h3 className="text-lg font-semibold text-center mb-4">{formSections[step - 1].category}</h3>
+      <div className="mb-4 text-center text-gray-600">Step {step} of 6</div>
+
       <form onSubmit={handleSubmit} className="space-y-4">
-        {formSections[step - 1].fields.map(({ name, type, options, placeholder }) => (
+      {formSections[step - 1].fields.map(({ name, type, options, placeholder }) => (
           <div key={name}>
             <label className="block text-sm font-medium capitalize">{placeholder}</label>
             {type === "select" ? (
@@ -241,10 +240,36 @@ const MerchantForm = () => {
             )}
           </div>
         ))}
-      <div className="text-center text-blue-600 font-bold">Current Score: {calculateScore()} / 100</div>
         <div className="flex justify-between mt-4">
-          {step > 1 && <button type="button" className="bg-gray-600 text-white py-2 px-4 rounded" onClick={prevStep}>Previous</button>}
-          {step < formSections.length ? <button type="button" className="bg-blue-500 text-white py-2 px-4 rounded" onClick={nextStep}>Next</button> : <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded">Submit</button>}
+          {step > 1 && (
+            <button
+              type="button"
+              className="bg-gray-600 text-white py-2 px-4 rounded"
+              onClick={prevStep}
+              disabled={loading}
+            >
+              Previous
+            </button>
+          )}
+
+          {step < 6 ? (
+            <button
+              type="button"
+              className="bg-blue-500 text-white py-2 px-4 rounded"
+              onClick={nextStep}
+              disabled={loading}
+            >
+              Next
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="bg-green-500 text-white py-2 px-4 rounded"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          )}
         </div>
       </form>
     </div>
