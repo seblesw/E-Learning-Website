@@ -32,26 +32,28 @@ const MerchantForm = () => {
     flexibility: "",
     supportNeeded: ""
   });
-
+  
   const scoreMapping = {
     registrationStatus: { "Registered": 5, "Not Registered": 0 },
-    primaryLocation: { "primaryLocation": 5 },
+    primaryLocation: { "Urban": 5, "Rural": 3 },
     businessType: { "Retail": 8, "Wholesale": 7, "Manufacturing": 9, "Service": 6, "Other": 5 },
     productsOffered: { "Producer": 10, "Re-seller": 5 },
+    monthlySalesVolume: { "Low": 2, "Medium": 4, "High": 5 },
     priceRange: { "Low Cost": 1, "Mid Range": 3, "High End": 5 },
     productAvailability: { "Available": 25, "Limited": 20, "Seasonal": 15 },
-    logisticsCapability: { "In-house": 10, "Partnered": 8, "Pickup": 5 },
-    paymentMethods: { "Cash": 5, "Mobile Money": 10, "Card": 8 },
-    onlinePresence: { "facebook": 7, "telegram": 8, "instagram": 6 },
-    telegramBusinessTools: { "High": 10, "Medium": 7, "Low": 4 },
-    digitalPaymentSystems: { "Yes": 10, "No": 5 },
-    customerAlignment: { "Yes": 10, "No": 5 },
-    promotionalStrategy: { "Discount": 10, "BOGO Offers": 8, "Free Delivery Promotions": 7 },
-    collaborationInterest: { "Yes": 10, "No": 5 },
-    flexibility: { "High": 10, "Moderate": 7, "Low": 4 },
-    supportNeeded: { "Financial Support": 5, "Training": 7 },
+    customerBaseSize: { "Small": 2, "Medium": 4, "Large": 5 },
+    targetDemographics: { "Local": 3, "Regional": 4, "International": 5 },
+    logisticsCapability: { "In-house": 5, "Partnered": 4, "Pickup": 3 },
+    paymentMethods: { "Cash": 2, "Mobile Money": 5, "Card": 3 },
+    onlinePresence: { "Facebook": 2, "Telegram": 3, "Instagram": 2 },
+    telegramBusinessTools: { "High": 5, "Medium": 3, "Low": 2 },
+    digitalPaymentSystems: { "Yes": 5, "No": 2 },
+    customerAlignment: { "Yes": 5, "No": 2 },
+    promotionalStrategy: { "Discount": 5, "BOGO Offers": 4, "Free Delivery Promotions": 3 },
+    collaborationInterest: { "Yes": 5, "No": 2 },
+    flexibility: { "High": 5, "Moderate": 3, "Low": 2 },
+    supportNeeded: { "Financial Support": 5, "Training": 4 },
   };
-
   const calculateScore = () => {
     let totalScore = 0;
     Object.keys(formData).forEach((key) => {
@@ -84,8 +86,8 @@ const MerchantForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (loading) return; // Prevent duplicate submission
-    setLoading(true); // Start loading
+    if (loading) return; 
+    setLoading(true);
 
     const finalScore = calculateScore();
     const submissionData = { ...formData, finalScore };
@@ -138,7 +140,7 @@ const MerchantForm = () => {
       console.error("Error submitting form:", error);
       alert("There was an error submitting the form. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
 
