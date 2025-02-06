@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const MerchantForm = () => {
   const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false); 
   const [formData, setFormData] = useState({
     businessName: "",
     ownerName: "",
@@ -140,7 +140,7 @@ const MerchantForm = () => {
       console.error("Error submitting form:", error);
       alert("There was an error submitting the form. Please try again.");
     } finally {
-      setLoading(false); 
+      setLoading(false); // Stop loading
     }
   };
 
