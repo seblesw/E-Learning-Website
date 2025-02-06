@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
 
 const MerchantForm = () => {
   const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false); // Loading state
   const [formData, setFormData] = useState({
     businessName: "",
     ownerName: "",
@@ -103,7 +104,18 @@ const MerchantForm = () => {
         }
       );
 
-      alert(`Form Submitted!\nYour total score is: ${finalScore}/100\nThank you for your submission.`);
+      Swal.fire({
+        title: "Form Submitted!",
+        text: `Your total score is: ${finalScore}/100\nThank you for your submission.`,
+        icon: "success",
+        confirmButtonText: "OK",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown"
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp"
+        }
+      });
 
       setFormData({
         businessName: "",
@@ -179,7 +191,7 @@ const MerchantForm = () => {
       category: "Customer Info",
       fields: [
         { name: "customerBaseSize", type: "number", placeholder: "Customer Base Size" },
-        { name: "targetDemographics", type: "text", placeholder: "Target Demographics" }
+        { name: "targetDemographics", type: "select", options: ["Kids", "Adults","Woman"], placeholder: "Select target Demographics" },
       ]
     },
     {
