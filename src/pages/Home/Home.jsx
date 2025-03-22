@@ -80,24 +80,14 @@ const Home = () => {
         {t('Discover Our Services')}
       </a>
     </div>
-    <div className="flex flex-col items-end lg:ml-12" >
-      <div className="text-right text-white text-3xl font-bold p-2 mt-2 border-white">
-        
-      </div>
-      <div className="text-right text-white text-3xl font-extrabold p-4 border-2 border-white mt-2"data-aos="fade-left">
-        <button>
-        <p>Available</p>
-        <button>
-        Everywhere
-
-        </button>
-        </button>
-      </div>
+    <div className="relative flex items-center justify-center p-4">
+  <div className="  rounded-lg px-6 py-3 text-center">
+    <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
+    <div className="mt-1 px-6 py-2 text-3xl backdrop-blur-md border border-white text-white font-bold text-md rounded-md inline-block shadow-md">
+      {t("Every Where")}
     </div>
   </div>
-  {/* Extra Row Below with Border */}
-  <div className="relative z-10 max-w-7xl mx-auto text-center mt-8 border-4 border-white p-4" data-aos="fade-up">
-    <p className="text-white text-3xl font-bold drop-shadow-lg">Everywhere</p>
+</div>
   </div>
 </header>
 
