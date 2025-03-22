@@ -84,7 +84,7 @@ const Home = () => {
       <div className="rounded-lg px-6 py-3 text-center">
         <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
         <div className="mt-1 px-6 py-2 text-3xl backdrop-blur-md border border-white text-white font-bold text-md rounded-md inline-block shadow-md">
-          {t("Every Where")}
+          <button>{t("Every Where")}</button>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@ const Home = () => {
     </div>
   </div>
 </section>
-      <Footer data-aos="fade-up" />
+<Footer data-aos="fade-up" />
     </div>
   );
 };
