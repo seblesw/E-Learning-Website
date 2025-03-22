@@ -8,7 +8,8 @@ import { MdAccountBalanceWallet  } from 'react-icons/md';
 import { FiShield } from 'react-icons/fi';
 
 const images = [
-  'assets/hero/hero2.webp',
+  'assets/hero/heroImage.png',
+  
 ];
 
 const Home = () => {
@@ -51,33 +52,54 @@ const Home = () => {
 
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
-      <header className="relative bg-white overflow-hidden shadow-lg h-screen">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-white opacity-70"></div>
-        <div 
-          className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
-          data-aos="fade-up"
-        >
-          <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
-            <h1 className="text-5xl font-bold text-gray-800 drop-shadow-md font-serif">
-              {t('Welcome to Hulu Labs')}
-            </h1>
-            <p className="mt-4 text-xl leading-8 text-gray-800 font-serif">
-              {t('Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth')}
-            </p>
-            <a
-              href="#services"
-              className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-4 px-12 text-lg font-bold text-white hover:from-blue-500 hover:to-teal-500 transition-transform transform hover:scale-105 shadow-md font-serif"
-              data-aos="fade-up"
-            >
-              {t('Discover Our Services')}
-            </a>
-          </div>
-        </div>
-      </header>
+<header className="relative bg-white overflow-hidden shadow-lg h-screen">
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+  ></div>
+
+  {/* First Gradient - Left to Right */}
+  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600  to-white opacity-50"></div>
+
+  <div 
+    className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-start"
+    data-aos="fade-up"
+  >
+    <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
+      <h1 className="text-5xl font-bold text-white drop-shadow-md font-serif">
+        {t('Welcome to Hulu Labs')}
+      </h1>
+      <p className="mt-4 text-xl leading-8 text-white font-serif">
+        {t('Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth')}
+      </p>
+      <a
+        href="#services"
+        className="mt-8 inline-block bg-white border border-cyan-500 rounded-full py-4 px-12 text-lg font-bold text-cyan-500 hover:text-cyan-600 hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-serif"
+        data-aos="fade-up"
+      >
+        {t('Discover Our Services')}
+      </a>
+    </div>
+    <div className="flex flex-col items-end lg:ml-12" >
+      <div className="text-right text-white text-3xl font-bold p-2 mt-2 border-white">
+        
+      </div>
+      <div className="text-right text-white text-3xl font-extrabold p-4 border-2 border-white mt-2"data-aos="fade-left">
+        <button>
+        <p>Available</p>
+        <button>
+        Everywhere
+
+        </button>
+        </button>
+      </div>
+    </div>
+  </div>
+  {/* Extra Row Below with Border */}
+  <div className="relative z-10 max-w-7xl mx-auto text-center mt-8 border-4 border-white p-4" data-aos="fade-up">
+    <p className="text-white text-3xl font-bold drop-shadow-lg">Everywhere</p>
+  </div>
+</header>
 
       <section id="services" className="py-16 bg-white" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
