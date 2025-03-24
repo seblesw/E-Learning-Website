@@ -54,7 +54,7 @@ const Home = () => {
 <header
   className="relative bg-white overflow-hidden shadow-lg h-screen"
   style={{
-    background: `linear-gradient(to right, #25A7E5 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), 
+    background: `linear-gradient(to right, #25A7E5 0%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0.5) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
@@ -87,7 +87,6 @@ const Home = () => {
     </div>
   </div>
 </header>
-
 
 <section id="services" className=" py-60 bg-white" data-aos="fade-up ">
  <div className="w-full">
