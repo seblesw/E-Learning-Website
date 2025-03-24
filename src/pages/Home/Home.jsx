@@ -51,48 +51,47 @@ const Home = () => {
   ];
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
-<header className="relative bg-white overflow-hidden shadow-lg h-screen">
+<header
+  className="relative bg-white overflow-hidden shadow-lg h-screen"
+  style={{
+    background: `linear-gradient(to right, #25A7E5, rgba(92, 101, 106, 0.7)), url(${images[currentImageIndex]}) center/cover no-repeat`,
+  }}
+>
+  {/* <div className="absolute inset-0 bg-gradient-to-r from-[#25A7E5] to-[#0d1011] opacity-60"></div> */}
+    {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
   <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
-  ></div>
-
-  {/* Gradient Overlay: Left bold cyan, right white with black opacity */}
-  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-white opacity-50"></div>
-  <div className="absolute inset-0 bg-black opacity-10"></div>
-
-  <div 
     className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-start"
     data-aos="fade-up"
   >
     <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
       <h1 className="text-5xl font-bold text-white drop-shadow-md font-poppins">
-        {t('Welcome to Hulu Labs')}
+        Welcome to Hulu Labs
       </h1>
       <p className="mt-4 text-xl leading-8 text-white font-poppins">
-        {t('Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth')}
+        Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth
       </p>
       <a
         href="#services"
-        className="mt-8 inline-block bg-white border border-cyan-500 rounded-full py-4 px-12 text-lg font-bold text-cyan-500 hover:text-cyan-600 hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-poppins"
+        className="mt-8 inline-block bg-white border border-[#25A7E5] rounded-full py-4 px-12 text-lg font-bold text-[#25A7E5] hover:text-[#24A7E5] hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-poppins"
         data-aos="fade-up"
       >
-        {t('Discover Our Services')}
+        Discover Our Services
       </a>
     </div>
     <div className="relative flex items-center justify-center p-4">
       <div className="rounded-lg px-6 py-3 text-center">
-        <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
+        <p className="text-white text-3xl font-light tracking-wide">Available</p>
         <div className="mt-1 px-6 py-2 text-3xl backdrop-blur-md border border-white text-white font-bold text-md rounded-md inline-block shadow-md">
-          <button>{t("Every Where")}</button>
+          <button>Every Where</button>
         </div>
       </div>
     </div>
   </div>
 </header>
-<section id="services" className=" bg-white" data-aos="fade-up ">
+
+<section id="services" className=" py-60 bg-white" data-aos="fade-up ">
  <div className="w-full">
-  <div className="text-center bg-cyan-100 w-full">
+  <div className="text-center  w-full">
   <h2 className="text-3xl font-bold text-cyan-500 drop-shadow-md font-poppins">
     {t('Our Services')}
   </h2>
@@ -128,14 +127,14 @@ const Home = () => {
 </section>
 <section id="why-choose-us" className="py-6" data-aos="fade-up">
   <div className="w-full">
-    <div className="text-center">
-      <h2 className="text-3xl font-bold text-cyan-500 drop-shadow-md font-poppins">
-        {t("what_makes_unique")}
-      </h2>
-      <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-poppins">
-        {t("what_makes_unique_description")}
-      </p>
-    </div>
+     <div className="text-center w-full">
+  <h2 className="text-3xl font-bold text-cyan-500 drop-shadow-md font-poppins">
+    {t('what_makes_unique')}
+  </h2>
+  <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-poppins px-4">
+    {t('what_makes_unique_description')}
+  </p>
+</div>
     <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {[
         {

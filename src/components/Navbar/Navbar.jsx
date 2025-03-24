@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-cyan-500 text-white dark:bg-gray-800 dark:text-white shadow-lg">
+    <nav className="bg-[#25A7E5] text-white dark:bg-gray-800 dark:text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -86,10 +86,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        
-        {/* Mobile Menu */}
-      {/* Mobile Menu */}
-{isOpen && (
+        {isOpen && (
   <div className="md:hidden mt-4 flex flex-col items-center space-y-4">
     <Link to="/" className="text-white text-lg" onClick={handleLinkClick}>{t('home')}</Link>
     <Link to="/about" className="text-white text-lg" onClick={handleLinkClick}>{t('about')}</Link>
