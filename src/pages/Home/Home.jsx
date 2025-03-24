@@ -54,7 +54,7 @@ const Home = () => {
 <header
   className="relative bg-white overflow-hidden shadow-lg h-screen"
   style={{
-    background: `linear-gradient(to right, #25A7E5 10%, #25A7E5 15%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.6) 100%), 
+    background: `linear-gradient(to right, #25A7E5 10%, #25A7E5 15%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.5) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
@@ -80,7 +80,7 @@ const Home = () => {
     <div className="relative flex items-center justify-center p-4">
       <div className="rounded-lg px-6 py-3 text-center">
         <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
-        <div className="mt-1 px-6 py-2 text-3xl backdrop-blur-md border border-white text-white font-bold text-md rounded-md inline-block shadow-md">
+        <div className="mt-1 px-6 py-2 text-5xl backdrop-blur-md border border-white text-white font-extrabold text-md rounded-md inline-block shadow-md">
           <button>{t("Every Where")}</button>
         </div>
       </div>
