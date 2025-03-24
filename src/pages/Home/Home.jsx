@@ -54,7 +54,7 @@ const Home = () => {
 <header
   className="relative bg-white overflow-hidden shadow-lg h-screen"
   style={{
-    background: `linear-gradient(to right, #25A7E5 0%, #25A7E5 15%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.6) 100%), 
+    background: `linear-gradient(to right, #25A7E5 10%, #25A7E5 15%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.6) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
@@ -64,24 +64,24 @@ const Home = () => {
   >
     <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
       <h1 className="text-5xl font-bold text-white drop-shadow-md font-poppins">
-        Welcome to Hulu Labs
+        {t("Welcome to Hulu Labs")}
       </h1>
       <p className="mt-4 text-xl leading-8 text-white font-poppins">
-        Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth
+        {t("Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth")}
       </p>
       <a
         href="#services"
         className="mt-8 inline-block bg-white border border-[#25A7E5] rounded-full py-4 px-12 text-lg font-bold text-[#25A7E5] hover:text-[#24A7E5] hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-poppins"
         data-aos="fade-up"
       >
-        Discover Our Services
+        {t("Discover Our Services")}
       </a>
     </div>
     <div className="relative flex items-center justify-center p-4">
       <div className="rounded-lg px-6 py-3 text-center">
-        <p className="text-white text-3xl font-light tracking-wide">Available</p>
+        <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
         <div className="mt-1 px-6 py-2 text-3xl backdrop-blur-md border border-white text-white font-bold text-md rounded-md inline-block shadow-md">
-          <button>Every Where</button>
+          <button>{t("Every Where")}</button>
         </div>
       </div>
     </div>
