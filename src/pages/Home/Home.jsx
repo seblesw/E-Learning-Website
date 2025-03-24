@@ -54,11 +54,10 @@ const Home = () => {
 <header
   className="relative bg-white overflow-hidden shadow-lg h-screen"
   style={{
-    background: `linear-gradient(to right, #25A7E5, rgba(92, 101, 106, 0.7)), url(${images[currentImageIndex]}) center/cover no-repeat`,
+    background: `linear-gradient(to right, #25A7E5 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), 
+                 url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
-  {/* <div className="absolute inset-0 bg-gradient-to-r from-[#25A7E5] to-[#0d1011] opacity-60"></div> */}
-    {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
   <div
     className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-start"
     data-aos="fade-up"
@@ -88,6 +87,7 @@ const Home = () => {
     </div>
   </div>
 </header>
+
 
 <section id="services" className=" py-60 bg-white" data-aos="fade-up ">
  <div className="w-full">
