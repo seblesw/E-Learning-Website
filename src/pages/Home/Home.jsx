@@ -54,7 +54,7 @@ const Home = () => {
 <header
   className="relative bg-white overflow-hidden shadow-lg h-screen"
   style={{
-    background: `linear-gradient(to right, #25A7E5 0%, rgba(0, 0, 0, 0.7) 65%, rgba(0, 0, 0, 0.5) 100%), 
+    background: `linear-gradient(to right, #25A7E5 0%, #25A7E5 15%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.6) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
