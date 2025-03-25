@@ -80,7 +80,7 @@ const Home = () => {
     </div>
     <div className="relative flex items-center justify-center p-4">
       <div className="rounded-lg px-6 py-3 text-center">
-      <p style={{ fontFamily: 'Dredawa, sans-serif' }} className="text-white text-3xl">
+      <p  className="text-white text-3xl font-dredawa">
   {t("Available")}
 </p>
       <div className="mt-1 px-6 py-2 text-4xl backdrop-blur-md border border-white text-white font-extrabold text-md rounded-md inline-block shadow-md">
