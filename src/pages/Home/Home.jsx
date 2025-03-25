@@ -84,7 +84,7 @@ const Home = () => {
           {t("Available")}
         </p>
         <div className="mt-1 px-4 py-2 sm:px-6 sm:py-2 text-xl sm:text-4xl backdrop-blur-md border border-white text-white font-extrabold rounded-md inline-block shadow-md">
-          <button className="px-4 py-2">{t("Every Where")}</button>
+          <button className="px-4 py-2 font-nokya">{t("Every Where")}</button>
         </div>
       </div>
     </div>
