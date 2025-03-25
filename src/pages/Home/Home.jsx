@@ -53,38 +53,38 @@ const Home = () => {
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
 <header
-  className="relative bg-white overflow-hidden shadow-lg h-screen py-20"
+  className="relative bg-white overflow-hidden shadow-lg min-h-screen py-12 sm:py-20"
   style={{
     background: `linear-gradient(to right, #25A7E5, #25A7E5 10%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.5) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
   }}
 >
   <div
-    className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-start"
+    className="relative z-10 max-w-7xl mx-auto py-12 sm:py-16 px-4 sm:px-6 lg:py-36 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
     data-aos="fade-up"
   >
-    <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
-      <h1 className="text-5xl font-bold text-white drop-shadow-md font-poppins">
+    <div className="text-center lg:text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
+      <h1 className="text-3xl sm:text-5xl font-bold text-white drop-shadow-md font-poppins">
         {t("Welcome to Hulu Labs")}
       </h1>
-      <p className="mt-4 text-xl leading-8 text-white font-poppins">
+      <p className="mt-4 text-lg sm:text-xl leading-7 sm:leading-8 text-white font-poppins">
         {t("Empowering your business with advanced, cutting-edge solutions that drive innovation, efficiency, and sustainable growth")}
       </p>
       <a
         href="#services"
-        className="mt-8 inline-block bg-white border border-[#25A7E5] rounded-full py-4 px-12 text-lg font-bold text-[#25A7E5] hover:text-[#24A7E5] hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-poppins"
+        className="mt-6 sm:mt-8 inline-block bg-white border border-[#25A7E5] rounded-full py-3 px-6 sm:py-4 sm:px-12 text-lg font-bold text-[#25A7E5] hover:text-[#24A7E5] hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-md font-poppins"
         data-aos="fade-up"
       >
         {t("Discover Our Services")}
       </a>
     </div>
-    <div className="relative flex items-center justify-center p-4">
-      <div className="rounded-lg px-6 py-3 text-center">
-      <p  className="text-white text-3xl font-nokya">
-  {t("Available")}
-</p>
-      <div className="mt-1 px-6 py-2 text-4xl backdrop-blur-md border border-white text-white font-extrabold text-md rounded-md inline-block shadow-md">
-          <button>{t("Every Where")}</button>
+    <div className="relative flex flex-col sm:flex-row items-center justify-center p-4">
+      <div className="rounded-lg px-4 sm:px-6 py-3 text-center">
+        <p className="text-white text-lg sm:text-3xl font-nokya">
+          {t("Available")}
+        </p>
+        <div className="mt-1 px-4 py-2 sm:px-6 sm:py-2 text-xl sm:text-4xl backdrop-blur-md border border-white text-white font-extrabold rounded-md inline-block shadow-md">
+          <button className="px-4 py-2">{t("Every Where")}</button>
         </div>
       </div>
     </div>
