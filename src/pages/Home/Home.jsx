@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { MdAccountBalanceWallet  } from 'react-icons/md';
 import { FiShield } from 'react-icons/fi';
 
+
 const images = [
   'assets/hero/heroImage.png',
   
@@ -52,7 +53,7 @@ const Home = () => {
   return (
     <div className="font-sans antialiased bg-white text-gray-900">
 <header
-  className="relative bg-white overflow-hidden shadow-lg h-screen"
+  className="relative bg-white overflow-hidden shadow-lg h-screen py-20"
   style={{
     background: `linear-gradient(to right, #25A7E5, #25A7E5 10%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.5) 100%), 
                  url(${images[currentImageIndex]}) center/cover no-repeat`,
@@ -79,8 +80,10 @@ const Home = () => {
     </div>
     <div className="relative flex items-center justify-center p-4">
       <div className="rounded-lg px-6 py-3 text-center">
-        <p className="text-white text-3xl font-light tracking-wide">{t("Available")}</p>
-        <div className="mt-1 px-6 py-2 text-4xl backdrop-blur-md border border-white text-white font-extrabold text-md rounded-md inline-block shadow-md">
+      <p style={{ fontFamily: 'Dredawa, sans-serif' }} className="text-white text-3xl">
+  {t("Available")}
+</p>
+      <div className="mt-1 px-6 py-2 text-4xl backdrop-blur-md border border-white text-white font-extrabold text-md rounded-md inline-block shadow-md">
           <button>{t("Every Where")}</button>
         </div>
       </div>
@@ -88,10 +91,10 @@ const Home = () => {
   </div>
 </header>
 
-<section id="services" className=" py-40  bg-cyan-50" data-aos="fade-up ">
+<section id="services" className=" py-40  bg-gray-50" data-aos="fade-up ">
  <div className="w-full">
   <div className="text-center  w-full">
-  <h2 className="text-4xl font-extrabold text-cyan-500 drop-shadow-md font-poppins">
+  <h2 className="text-3xl font-bold text-[#25a7e5]  font-Nokya Pure ">
     {t('Our Services')}
   </h2>
   <p className="mt-4 text-xl leading-7 text-gray-600 max-w-2xl mx-auto font-poppins px-4">
@@ -104,19 +107,19 @@ const Home = () => {
       key={index}
       href={service.link}
       rel="noopener noreferrer"
-      className="relative flex flex-col items-center justify-center bg-white p-8 rounded-3xl transition-transform duration-300 transform hover:scale-105 border border-cyan-500"
+      className="relative flex flex-col items-center justify-center bg-white p-8 rounded-3xl border border-[#25A7E5] transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
       data-aos="zoom-in-up"
     >
-      <div className="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 text-white mb-4">
+      <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-4">
         {service.icon}
       </div>
-      <h3 className="text-2xl font-semibold text-cyan-500 mb-2 font-poppins text-center">
+      <h3 className="text-2xl font-bold text-[#25A7E5] mb-2 font-montserrant text-center">
         {service.title}
       </h3>
       <p className="text-lg text-gray-600 font-poppins text-center">
         {service.description}
       </p>
-      <span className='text-cyan-500 font-poppins font-bold'>{t('view_details')}</span>
+      <span className="text-[#25A7E5] font-Nokya-Pure font-bold">{t('view_details')}</span>
 
       <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
     </a>
@@ -125,10 +128,10 @@ const Home = () => {
 
 </div>
 </section>
-<section id="why-choose-us" className="py-6 bg-cyan-50" data-aos="fade-up">
+<section id="why-choose-us" className="py-6 bg-gray-50" data-aos="fade-up">
   <div className="w-full">
      <div className="text-center w-full">
-  <h2 className="text-3xl font-bold text-cyan-500 drop-shadow-md font-poppins">
+  <h2 className="text-3xl font-bold text-[#25A7E5]  font-montserrant">
     {t('what_makes_unique')}
   </h2>
   <p className="mt-4 text-xl leading-7 text-gray-800 max-w-2xl mx-auto font-poppins px-4">
@@ -155,7 +158,7 @@ const Home = () => {
       className="relative flex flex-col items-center justify-center bg-white p-8 rounded-xl transition-transform duration-300 transform hover:scale-x-150 border border-cyan-500"
       data-aos="zoom-in-up"
     >
-      <h3 className="text-2xl font-semibold text-cyan-500 mb-2 font-poppins text-center">
+      <h3 className="text-2xl font-semibold text-[#25A7E5] mb-2 font-poppins text-center">
         {benefit.title}
       </h3>
       <p className="text-lg text-gray-600 font-poppins text-center">

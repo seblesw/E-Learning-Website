@@ -3,27 +3,27 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'react-feather';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-cyan-900 via-cyan-500 to-cyan-900 dark:from-cyan-950 dark:via-cyan-600 dark:to-cyan-950  text-gray-300"data-aos="fade-up">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 font-serif">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 font-serif">
+    <footer className="bg-gradient-to-r from-cyan-900 via-[#25A7E5] to-cyan-900 dark:from-cyan-950 dark:via-cyan-600 dark:to-cyan-950  text-gray-300"data-aos="fade-up">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 font-poppins">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 font-poppins">
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4 font-serif">Our Company</h3>
+            <h3 className="text-xl font-semibold text-white mb-4 font-poppins">Our Company</h3>
             <p className="text-gray-200">
               Leading provider of business solutions that empower companies to thrive in the digital world.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4 font-serif">Quick Links</h3>
-            <ul className="space-y-2">
-  <li><a href="/" className="hover:text-white font-serif">Home</a></li>
-  <li><a href="/about" className="hover:text-white font-serif">About Us</a></li>
-  <li><a href="/services" className="hover:text-white font-serif">Services</a></li>
-  <li><a href="/contact" className="hover:text-white font-serif">Contact</a></li>
+            <h3 className="text-xl font-semibold text-white mb-4 font-montserrant">Quick Links</h3>
+            <ul className="space-y-2 font-poppins">
+  <li><a href="/" className="hover:text-white ">Home</a></li>
+  <li><a href="/about" className="hover:text-white ">About Us</a></li>
+  <li><a href="/services" className="hover:text-white ">Services</a></li>
+  <li><a href="/contact" className="hover:text-white">Contact</a></li>
 </ul>
 
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4 font-serif">Follow Us</h3>
+            <h3 className="text-xl font-semibold text-white mb-4 font-poppins">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white"><Facebook /></a>
               <a href="#" className="hover:text-white"><Twitter /></a>
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-900 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-serif">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-poppins">
           <p className="text-gray-200">
             &copy; {new Date().getFullYear()} Hulu Labs. All rights reserved.
           </p>

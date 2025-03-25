@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Dredawa';
+    src: url('/fonts/Dredawa.woff2') format('woff2'),
+         url('/fonts/Dredawa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }  
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

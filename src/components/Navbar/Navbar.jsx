@@ -17,8 +17,8 @@ const Navbar = () => {
 
   const getLinkClassName = (path) => {
     return location.pathname === path
-      ? "relative text-white text-lg transition-all duration-300 font-poppins font-bold"
-      : "relative text-white hover:text-gray-300 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-600 hover:after:bg-gray-300 after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-poppins font-bold";
+      ? "relative text-white text-lg transition-all duration-300 font-poppins font-medium"
+      : "relative text-white hover:text-gray-300 text-lg transition-all duration-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-600 hover:after:bg-gray-300 after:left-1/2 after:top-full after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full font-poppins font-medium";
   };
 
   const toggleLanguage = (lang) => {
@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#25A7E5] text-white dark:bg-gray-800 dark:text-white shadow-lg">
+    <nav className="fixed top-0 w-full z-50 bg-[#25A7E5] text-white dark:bg-gray-800 dark:text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 font-medium">
             <Link to="/" className={getLinkClassName('/')} onClick={handleLinkClick}>{t('home')}</Link>
             <Link to="/about" className={getLinkClassName('/about')} onClick={handleLinkClick}>{t('about')}</Link>
             <Link to="/services" className={getLinkClassName('/services')} onClick={handleLinkClick}>{t('services')}</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
               onClick={() => setShowLangOptions(!showLangOptions)}
             >
               <FaGlobe size={20} className="text-white hover:text-gray-300" />
-              <span className="hidden sm:block text-white font-bold">
+              <span className="hidden sm:block text-white font-medium">
                 {i18n.language.toUpperCase()}
               </span>
               {showLangOptions && (
@@ -86,44 +86,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        {isOpen && (
-  <div className="md:hidden mt-4 flex flex-col items-center space-y-4">
-    <Link to="/" className="text-white text-lg" onClick={handleLinkClick}>{t('home')}</Link>
-    <Link to="/about" className="text-white text-lg" onClick={handleLinkClick}>{t('about')}</Link>
-    <Link to="/services" className="text-white text-lg" onClick={handleLinkClick}>{t('services')}</Link>
-    <Link to="/blog" className="text-white text-lg" onClick={handleLinkClick}>{t('blog')}</Link>
-    <Link to="/contact" className="text-white text-lg" onClick={handleLinkClick}>{t('contact')}</Link>
-    <Link to="/Merchant Form" className="text-white text-lg" onClick={handleLinkClick}>{t('Merchant Form')}</Link>
-
-    {/* Language Selector for Mobile */}
-    <div className="relative mt-2">
-      <button 
-        onClick={() => setShowLangOptions(!showLangOptions)}
-        className="flex items-center space-x-2 text-white text-lg font-bold"
-      >
-        <FaGlobe size={20} />
-        <span>{i18n.language.toUpperCase()}</span>
-      </button>
-
-      {showLangOptions && (
-        <div className="absolute mt-2 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-700 shadow-lg rounded-md py-1 z-50">
-          <button 
-            onClick={() => toggleLanguage('en')} 
-            className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
-          >
-            English
-          </button>
-          <button 
-            onClick={() => toggleLanguage('am')} 
-            className="block w-full px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-teal-600 hover:text-white text-left"
-          >
-            አማርኛ
-          </button>
-        </div>
-      )}
-    </div>
-  </div>
-)}
       </div>
     </nav>
   );
