@@ -1,9 +1,18 @@
-@font-face {
-    font-family: 'Dredawa';
-    src: url('/fonts/Dredawa.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }  
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'DireDawa';
+  src: url('/fonts/DireDawa.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nokya';
+  src: url('/fonts/Nokya.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
