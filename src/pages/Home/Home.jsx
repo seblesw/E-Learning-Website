@@ -104,24 +104,21 @@ const Home = () => {
 <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
   {services.map((service, index) => (
     <a
-      key={index}
-      href={service.link}
-      rel="noopener noreferrer"
-      className="relative flex flex-col items-center justify-center bg-white p-8 rounded-3xl border border-[#25A7E5] transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-      data-aos="zoom-in-up"
+    key={index}
+    href={service.link}
+    rel="noopener noreferrer"
+    className="relative flex flex-col items-center justify-center bg-white p-8 rounded-3xl border border-[#25A7E5] transition-transform transform hover:scale-110"
     >
       <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-4">
         {service.icon}
       </div>
-      <h3 className="text-2xl font-bold text-[#25A7E5] mb-2 font-montserrant text-center">
+      <h3 className="text-2xl font-bold text-[#25A7E5] mb-2 font-montserrat text-center">
         {service.title}
       </h3>
       <p className="text-lg text-gray-600 font-poppins text-center">
         {service.description}
       </p>
       <span className="text-[#25A7E5] font-Nokya-Pure font-bold">{t('view_details')}</span>
-
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
     </a>
   ))}
 </div>
@@ -131,7 +128,7 @@ const Home = () => {
 <section id="why-choose-us" className="py-6 bg-gray-50" data-aos="fade-up">
   <div className="w-full">
      <div className="text-center w-full">
-  <h2 className="text-3xl font-bold text-[#25A7E5]  font-montserrant">
+  <h2 className="text-3xl font-bold text-[#25A7E5]  font-montserrat">
     {t('what_makes_unique')}
   </h2>
   <p className="mt-4 text-xl leading-7 text-gray-800 max-w-2xl mx-auto font-poppins px-4">
@@ -155,8 +152,7 @@ const Home = () => {
   ].map((benefit, index) => (
     <div
       key={index}
-      className="relative flex flex-col items-center justify-center bg-white p-8 rounded-xl transition-transform duration-300 transform hover:scale-x-150 border border-cyan-500"
-      data-aos="zoom-in-up"
+      className="relative flex flex-col items-center justify-center bg-white p-8 rounded-xl border border-[#25A7E5] transition-transform transform hover:scale-110"
     >
       <h3 className="text-2xl font-semibold text-[#25A7E5] mb-2 font-poppins text-center">
         {benefit.title}
@@ -164,7 +160,6 @@ const Home = () => {
       <p className="text-lg text-gray-600 font-poppins text-center">
         {benefit.description}
       </p>
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-blue-100 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
     </div>
   ))}
 </div>
