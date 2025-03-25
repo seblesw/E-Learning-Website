@@ -16,8 +16,8 @@ export default {
           slide: 'slide 1s ease-out forwards',
         },
         fontFamily: {
-          diredawa: ['"DireDawa"', 'sans-serif'],
-          nokya: ['"Nokya"', 'sans-serif'],
+          dire: ['DireDawa', 'sans-serif'],
+          nokya: ['Nokya', 'sans-serif'],
         },
       },
     },
