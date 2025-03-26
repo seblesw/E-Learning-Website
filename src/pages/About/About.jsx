@@ -76,10 +76,10 @@ const About = () => {
             }].map((item, index) => (
               <div key={index} className="relative flex flex-col bg-[#E9F2F6] dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
                 <div className="flex items-center space-x-3">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#25A7E5] text-white shadow-lg">
+                  <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#25A7E5] text-white shadow-lg">
                     <i className={`${item.icon} text-lg`}></i>
                   </div>
-                  <h2 className="text-2xl font-bold text-[#25A7E5] dark:text-gray-100 font-montserrat">
+                  <h2 className="text-3xl font-extrabold text-[#25A7E5] dark:text-gray-100 font-montserrat">
                     {item.title}
                   </h2>
                 </div>

@@ -50,11 +50,18 @@ const Services = () => {
     <h1 className="text-4xl font-extrabold text-[#25A7E5] dark:text-gray-100 drop-shadow-xl font-poppins">
       {t("our_services")}
     </h1>
-    <p className="mt-5 text-lg text-gray-200 dark:text-gray-300 max-w-3xl mx-auto font-poppins ">
+    <p className="mt-5 text-lg text-gray-200 dark:text-gray-300 max-w-3xl mx-auto font-poppins">
       Elevate your business with cutting-edge, results-driven solutions tailored to your success.
     </p>
   </div>
+  <div 
+      className="absolute left-1/2 transform -translate-x-1/2 bottom-6 animate-bounce cursor-pointer" 
+      onClick={scrollToServices}
+    >
+      <ChevronDown size={40} className="text-[#25A7E5]" />
+    </div>
 </header>
+
 <section className="py-6 bg-[#222D3D]" id="services-section" data-aos="fade-up">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -67,10 +74,10 @@ const Services = () => {
           data-aos={service.animation}
         >
           <div className="flex items-center space-x-4 mb-4">
-            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white shadow-lg">
+            <div className="flex items-center justify-center h-12 w-12 rounded-full bg-[#25A7E5] text-white shadow-lg">
               {service.icon}
             </div>
-            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 font-poppins">
+            <h3 className="text-2xl font-bold text-[#25A7E5] dark:text-gray-100 font-poppins">
               {service.title}
             </h3>
           </div>
@@ -86,9 +93,9 @@ const Services = () => {
       <section className="py-16 bg-[#222D3D]" id="services-overview" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-[#25A7E5] mb-6 font-poppins">
-            Why Choose Our Services?
+            Why choose our Services?
           </h2>
-          <p className="text-lg text-white leading-8 max-w-3xl mx-auto font-poppins">
+          <p className="font-medium text-base text-white leading-8 max-w-3xl mx-auto font-poppins">
             We offers a comprehensive suite of solutions, including a cutting-edge e-commerce platform, versatile payment solutions, and innovative cryptocurrency services. Our offerings are designed to streamline online transactions, enhance payment flexibility, and empower businesses to thrive in the evolving digital economy.
           </p>
         </div>

@@ -112,7 +112,7 @@ const Home = () => {
       <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-4">
         {service.icon}
       </div>
-      <h3 className="text-2xl font-bold text-[#25A7E5] mb-2 font-montserrat text-center">
+      <h3 className="text-2xl font-extrabold text-[#25A7E5] mb-2 font-montserrat text-center">
         {service.title}
       </h3>
       <p className="text-lg text-gray-600 font-poppins text-center">
