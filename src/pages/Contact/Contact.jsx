@@ -65,9 +65,9 @@ const Contact = () => {
 
   return (
     <div>
-      <section id="contact" className="py-16 bg-white dark:bg-gray-800">
+      <section id="contact" className="py-40 bg-[#222D3D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-center font-serif" data-aos="fade-up">
+          <h2 className="text-4xl font-bold text-white dark:text-gray-100 mb-12 text-center font-poppins" data-aos="fade-up">
           {t("get_in_touch_with_us")}
           </h2>
 
@@ -148,13 +148,13 @@ const Contact = () => {
 
           {/* Contact Information Section */}
           <div className="mt-16 text-center" data-aos="fade-up">
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 font-serif">
+            <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-4 font-poppins">
               Contact Information
             </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
+            <p className="text-lg text-white dark:text-gray-300 font-poppins">
               <strong>Email:</strong> contact@hulu-software.com
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
+            <p className="text-lg text-white dark:text-gray-300 font-poppins">
               <strong>Phone:</strong> +251 00000
             </p>
           </div>

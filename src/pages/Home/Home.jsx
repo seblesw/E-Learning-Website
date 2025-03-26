@@ -91,13 +91,13 @@ const Home = () => {
   </div>
 </header>
 
-<section id="services" className=" py-40  bg-gray-50" data-aos="fade-up ">
+<section id="services" className=" py-40  bg-[#222D3D]" data-aos="fade-up ">
  <div className="w-full">
   <div className="text-center  w-full">
   <h2 className="text-3xl font-bold text-[#25a7e5]  font-Nokya Pure ">
     {t('Our Services')}
   </h2>
-  <p className="mt-4 text-xl leading-7 text-gray-600 max-w-4xl mx-auto font-poppins px-4">
+  <p className="mt-4 text-xl leading-7 text-white max-w-4xl mx-auto font-poppins px-4">
     {t('We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.')}
   </p>
 </div>
@@ -125,13 +125,13 @@ const Home = () => {
 
 </div>
 </section>
-<section id="why-choose-us" className="py-6 bg-gray-50" data-aos="fade-up">
+<section id="why-choose-us" className="py-6 bg-[#222D3D]" data-aos="fade-up">
   <div className="w-full">
      <div className="text-center w-full">
   <h2 className="text-3xl font-bold text-[#25A7E5]  font-montserrat">
     {t('what_makes_unique')}
   </h2>
-  <p className="mt-4 text-xl leading-7 text-gray-800 max-w-5xl mx-auto font-poppins px-4">
+  <p className="mt-4 text-xl leading-7 text-white max-w-5xl mx-auto font-poppins px-4">
     {t('what_makes_unique_description')}
   </p>
 </div>

@@ -218,7 +218,8 @@ const MerchantForm = () => {
     }
   ];
   return (
-    <div className="max-w-lg mx-auto p-6 mt-16 bg-white shadow-md rounded-xl">
+    <section className="bg-[#222D3D] py-10 ">
+    <div className="max-w-lg mx-auto p-10 py-10 mt-16 bg-white shadow-md rounded-xl">
       <h2 className="text-xl font-bold mb-4">Merchant Selection Criteria Form</h2>
       <div className="mb-4 text-center text-gray-600">Step {step} of 6</div>
 
@@ -287,6 +288,8 @@ const MerchantForm = () => {
         </div>
       </form>
     </div>
+    </section>
+
   );
 };
 

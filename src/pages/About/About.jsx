@@ -25,27 +25,25 @@ const About = () => {
   }, []);
 
   return (
-    <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-whitedark:hidden"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
+    <div className="font-sans antialiased bg-gray-100 text-gray-900 dark:text-gray-100">
+      <header className="relative bg-[#222D3D] overflow-hidden shadow-lg">
         <div 
           className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-48 lg:px-8 flex flex-col lg:flex-row justify-between items-center"
           data-aos="fade-up"
         >
           <div className="text-left max-w-xl mb-8 lg:mb-0" data-aos="fade-right">
-            <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+            <h1 className="text-3xl font-bold text-white dark:text-gray-100 drop-shadow-md font-poppins">
             {t("about_hulu_software_labs")}
             </h1>
-            <p className="mt-4 text-lg leading-8 text-gray-700 dark:text-gray-300 font-serif">
+            <p className="mt-4 text-lg leading-8 text-white dark:text-gray-300 font-poppins">
             Founded five years ago by visionary leaders Dr. Mekides Assefa and Dr. Amir Teshome, Hulu Software Labs PLC is a fully licensed and tax-compliant entity serving the Ethiopian market. We specialize in delivering innovative software solutions tailored to meet the unique needs of businesses in Ethiopia, with a steadfast commitment to excellence and regulatory compliance.            </p>
-            <a
+            {/* <a
               href="#mission"
-              className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-serif"
+              className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-teal-400 border border-transparent rounded-full py-3 px-10 text-lg font-semibold text-white hover:bg-blue-600 dark:hover:bg-teal-700 transition-transform transform hover:scale-105 shadow-md font-poppins"
               data-aos="zoom-in"
             >
               {t("eplore_more_about_us")}
-            </a>
+            </a> */}
           </div>
 
           <div className="w-full lg:w-1/2 flex justify-center" data-aos="fade-left">
@@ -64,29 +62,29 @@ const About = () => {
           </div>
         </div>
       </header>
-      <section id="mission" className="py-16 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700" data-aos="fade-up">
+      <section id="mission" className="py-16 bg-[#222D3D]" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+            <div className="relative flex flex-col bg-[#E9F2F6] dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-6 shadow-lg">
                 <i className="fas fa-bullseye text-xl"></i> {/* Icon for Mission */}
               </div>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              <h2 className="text-2xl font-bold text-[#25A7E5] dark:text-gray-100 drop-shadow-md font-poppins">
                 Our Mission
               </h2>
-              <p className="mt-4 text-lg leading-7 text-gray-600 dark:text-gray-300 font-serif">
+              <p className="mt-4 text-lg leading-7 text-[#222D3D] dark:text-gray-300 font-poppins">
                 Our mission is to contribute to the global digital transformation process by providing digital solutions that automate and transform many of the day-to-day activities of the Ethiopian people. We differentiate ourselves by localizing and adapting state-of-the-art solutions to meet the unique needs of the local population.
               </p>
             </div>
 
-            <div className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+            <div className="relative flex flex-col bg-[#E9F2F6] dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-6 shadow-lg">
                 <i className="fas fa-eye text-2xl"></i> {/* Icon for Vision */}
               </div>
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+              <h2 className="text-2xl font-bold text-[#25A7E5] dark:text-gray-100 drop-shadow-md font-poppins">
                 Our Vision
               </h2>
-              <p className="mt-4 text-lg leading-7 text-gray-600 dark:text-gray-300 font-serif">
+              <p className="mt-4 text-lg leading-7 text-[#222D3D] dark:text-gray-300 font-poppins">
                 Our vision is to be among the leading digital services providers in Ethiopia and across the Horn of Africa, bridging the gap for the international market to access local and marginalized East African societies.
               </p>
             </div>
@@ -94,13 +92,13 @@ const About = () => {
         </div>
       </section>
 
-      <section id="values" className="py-16 bg-gray-200 dark:bg-gray-800" data-aos="fade-up">
+      <section id="values" className="py-16 bg-[#222D3D]" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
+            <h2 className="text-3xl font-bold text-[#25A7E5] dark:text-gray-100 drop-shadow-md font-poppins">
               Our Core Values
             </h2>
-            <p className="mt-4 text-xl leading-7 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-serif">
+            <p className="mt-4 text-xl leading-7 text-white dark:text-gray-300 max-w-2xl mx-auto font-poppins">
             The foundational principles that drive our mission to deliver excellence and shape our vision for sustainable growth, innovation, and client success.            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -125,10 +123,10 @@ const About = () => {
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
                   <i className={`${value.icon} text-2xl`}></i>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
+                <h3 className="text-2xl font-semibold text-[#222D3D] dark:text-gray-100 mb-4 font-poppins">
                   {value.title}
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
+                <p className="text-lg text-[#222D3D] dark:text-gray-300 font-poppins">
                   {value.description}
                 </p>
               </div>
@@ -136,13 +134,13 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section id="founders" className="py-16 bg-white dark:bg-gray-900" data-aos="fade-up">
+      <section id="founders" className="py-16 bg-[#222D3D]" data-aos="fade-up">
   <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div className="text-center">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 drop-shadow-md font-serif">
+      <h2 className="text-2xl font-bold text-[#25A7E5] dark:text-gray-100 drop-shadow-md font-poppins">
         Meet Our Founders
       </h2>
-      <p className="mt-5 text-xl leading-8 text-gray-800 dark:text-gray-800 max-w-3xl mx-auto font-serif">
+      <p className="mt-5 text-xl leading-8 text-white dark:text-gray-800 max-w-3xl mx-auto font-poppins">
         Visionaries shaping the future of Hulu Labs PLC with innovation, leadership, and a commitment to excellence.
       </p>
     </div>
@@ -203,7 +201,7 @@ const About = () => {
           <h4 className="text-lg text-teal-600 dark:text-teal-400 mb-3 font-medium">
             {founder.title}
           </h4>
-          <p className="text-base text-gray-800 dark:text-gray-300 text-center leading-relaxed font-serif">
+          <p className="text-base text-gray-800 dark:text-gray-300 text-center leading-relaxed font-poppins">
             {founder.description}
           </p>
           <div className="absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-teal-600 dark:to-teal-700 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
