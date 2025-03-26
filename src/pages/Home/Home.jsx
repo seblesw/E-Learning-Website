@@ -91,40 +91,48 @@ const Home = () => {
   </div>
 </header>
 
-<section id="services" className=" py-40  bg-[#222D3D]" data-aos="fade-up ">
- <div className="w-full">
-  <div className="text-center  w-full">
-  <h2 className="text-3xl font-bold text-[#25a7e5]  font-Nokya Pure ">
-    {t('Our Services')}
-  </h2>
-  <p className="mt-4 text-xl leading-7 text-white max-w-4xl mx-auto font-poppins px-4">
-    {t('We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.')}
-  </p>
-</div>
-<div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  {services.map((service, index) => (
-    <a
-    key={index}
-    href={service.link}
-    rel="noopener noreferrer"
-    className="relative flex flex-col items-center justify-center bg-white p-8 rounded-3xl border border-[#25A7E5] transition-transform transform hover:scale-110"
-    >
-      <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-4">
-        {service.icon}
-      </div>
-      <h3 className="text-2xl font-extrabold text-[#25A7E5] mb-2 font-montserrat text-center">
-        {service.title}
-      </h3>
-      <p className="text-lg text-gray-600 font-poppins text-center">
-        {service.description}
+<section id="services" className="py-40 bg-[#222D3D]" data-aos="fade-up">
+  <div className="w-full">
+    <div className="text-center w-full">
+      <h2 className="text-3xl font-bold text-[#25a7e5] font-Nokya-Pure">
+        {t('Our Services')}
+      </h2>
+      <p className="mt-4 text-xl leading-7 text-white max-w-4xl mx-auto font-poppins px-4">
+        {t('We provide an extensive suite of innovative solutions designed to empower your business and drive success in today’s digital economy.')}
       </p>
-      <span className="text-[#25A7E5] font-Nokya-Pure font-bold">{t('view_details')}</span>
-    </a>
-  ))}
-</div>
-
-</div>
+    </div>
+    <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {services.map((service, index) => (
+        <div
+          key={index}
+          href={service.link}
+          rel="noopener noreferrer"
+          className="relative flex flex-col items-center justify-between bg-white p-8 rounded-3xl border border-[#25A7E5] shadow-lg transition-transform transform hover:scale-105 h-full"
+        >
+          <div className="flex items-center justify-center h-16 w-16 rounded-full bg-[#25A7E5] text-white mb-4">
+            {service.icon}
+          </div>
+          <h3 className="text-2xl font-extrabold text-[#25A7E5] mb-2 font-montserrat text-center">
+            {service.title}
+          </h3>
+          <p className="text-lg text-gray-600 font-poppins text-center flex-grow">
+            {service.description}
+          </p>
+          <a
+          key={index}
+          href={service.link}
+          rel="noopener noreferrer"
+          >
+          <span className="text-[#25A7E5] font-Nokya-Pure font-bold mt-4">
+            {t('view_details')}
+          </span>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
+
 <section id="why-choose-us" className="py-6 bg-[#222D3D]" data-aos="fade-up">
   <div className="w-full">
      <div className="text-center w-full">
