@@ -67,7 +67,7 @@ const Contact = () => {
     <div>
       <section id="contact" className="py-40 bg-[#222D3D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white dark:text-gray-100 mb-12 text-center font-poppins" data-aos="fade-up">
+          <h2 className="text-3xl font-bold text-white dark:text-gray-100 mb-12 text-center font-poppins" data-aos="fade-up">
           {t("get_in_touch_with_us")}
           </h2>
 
@@ -138,7 +138,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-400 to-teal-600 dark:from-teal-600 dark:to-teal-700 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
+                  className="w-full bg-blue-400 text-white py-3 px-6 rounded-md hover:shadow-lg transition-transform transform hover:scale-105 duration-300"
                 >
                   Send Message
                 </button>
