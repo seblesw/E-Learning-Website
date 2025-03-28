@@ -35,7 +35,6 @@ const Navbar = () => {
             <span className="text-4xl sm:text-3xl font-extrabold text-white">{t('E-Learning')}</span>
           </a>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white hover:text-gray-300 focus:outline-none"
@@ -43,16 +42,13 @@ const Navbar = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 font-medium">
-            <Link to="/" className={getLinkClassName('/')} onClick={handleLinkClick}>{t('home')}</Link>
-            <Link to="/courses" className={getLinkClassName('/courses')} onClick={handleLinkClick}>{t('Courses')}</Link>
-            <Link to="/categories" className={getLinkClassName('/categories')} onClick={handleLinkClick}>{t('Categories')}</Link>
-            <Link to="/instructors" className={getLinkClassName('/instructors')} onClick={handleLinkClick}>{t('Instructors')}</Link>
-            <Link to="/pricing" className={getLinkClassName('/pricing')} onClick={handleLinkClick}>{t('Pricing')}</Link>
-            <Link to="/faq" className={getLinkClassName('/faq')} onClick={handleLinkClick}>{t('FAQs')}</Link>
+            <Link to="/Courses" className={getLinkClassName('/Courses')} onClick={handleLinkClick}>{t('Courses')}</Link>
+            <Link to="/Resources" className={getLinkClassName('/Resources')} onClick={handleLinkClick}>{t('Resources')}</Link>
+            <Link to="/Assignments" className={getLinkClassName('/Assignments')} onClick={handleLinkClick}>{t('Assignments')}</Link>
+            <Link to="/Discussions" className={getLinkClassName('/Discussions')} onClick={handleLinkClick}>{t('Discussions')}</Link>
+            <Link to="/Signup" className={getLinkClassName('/Signup')} onClick={handleLinkClick}>{t('Signup')}</Link>
 
-            {/* Language Selector */}
             <div className="relative flex items-center space-x-2 cursor-pointer" onClick={() => setShowLangOptions(!showLangOptions)}>
               <FaGlobe size={20} className="text-white hover:text-gray-300" />
               <span className="hidden sm:block text-white font-medium">
@@ -68,15 +64,14 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-[#25A7E5] shadow-md py-4 flex flex-col space-y-4 items-center">
-            <Link to="/" className="text-white text-lg" onClick={handleLinkClick}>{t('home')}</Link>
-            <Link to="/courses" className="text-white text-lg" onClick={handleLinkClick}>{t('Courses')}</Link>
-            <Link to="/categories" className="text-white text-lg" onClick={handleLinkClick}>{t('Categories')}</Link>
-            <Link to="/instructors" className="text-white text-lg" onClick={handleLinkClick}>{t('Instructors')}</Link>
-            <Link to="/pricing" className="text-white text-lg" onClick={handleLinkClick}>{t('Pricing')}</Link>
-            <Link to="/faq" className="text-white text-lg" onClick={handleLinkClick}>{t('FAQs')}</Link>
+            <Link to="/Courses" className="text-white text-lg" onClick={handleLinkClick}>{t('Courses')}</Link>
+            <Link to="/Resources" className="text-white text-lg" onClick={handleLinkClick}>{t('Resources')}</Link>
+            <Link to="/Assignments" className="text-white text-lg" onClick={handleLinkClick}>{t('Assignments')}</Link>
+            <Link to="/Discussions" className="text-white text-lg" onClick={handleLinkClick}>{t('Discussions')}</Link>
+            <Link to="/Signup" className={getLinkClassName('/Signup')} onClick={handleLinkClick}>{t('Signup')}</Link>
+
           </div>
         )}
       </div>

@@ -2,17 +2,15 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Services from './pages/Services/Services';
-import Projects from './pages/Projects/Projects';
-import Blog from './pages/Blog/Blog';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-// import Waitlist from './pages/Waitlist/Waitlist';
-import Contact from './pages/Contact/Contact';
-import './i18n'; // Import i18n configuration
-import MerchantForm from './pages/MerchantForm/merchantForm';
+import './i18n'; 
+import Courses from './pages/Courses/Courses';
+import Discussions from './pages/Discussions/Discussions';
+import Resources from './pages/Resources/Resources';
+import Assignments from './pages/Assignments/Assignments';
+import Signup from './pages/Signup/signup';
 
 
 function App() {
@@ -32,14 +30,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={< Services/>} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/waitlist" element={<Waitlist />} /> */}
-        <Route path="/Merchant Form" element={<MerchantForm />} />
-
+        <Route path="/Courses" element={<Courses />} />
+        <Route path="/Resources" element={< Resources/>} />
+        <Route path="/Assignments" element={<Assignments />} />
+        <Route path="/discussions" element={<Discussions />} />
+        <Route path="/Signup" element={<Signup />} />
       </Routes>
     </Router>
   );
