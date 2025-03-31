@@ -11,20 +11,16 @@ const Assignments = () => {
   }, []);
 
   return (
-    <div className="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <header className="relative bg-white dark:bg-gray-800 overflow-hidden shadow-lg">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-teal-100 to-white dark:hidden"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-800 via-blue-900 to-gray-900 hidden dark:block"></div>
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 text-center" data-aos="fade-up">
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 drop-shadow-md font-serif">
-            Our Assignments
-          </h1>
-          <p className="mt-4 text-xl leading-8 text-gray-700 dark:text-gray-300 font-serif max-w-2xl mx-auto">
-            A collection of assignments to enhance your learning experience.
-          </p>
-        </div>
-      </header>
-      <section className="py-16 bg-gray-100 dark:bg-gray-900" data-aos="fade-up">
+    <div className="font-sans antialiased bg-white text-green-900 relative">
+      <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 text-center" data-aos="fade-up">
+        <h1 className="text-3xl font-bold text-green-900 drop-shadow-md font-serif">
+          Our Assignments
+        </h1>
+        <p className="mt-4 text-xl leading-8 text-green-900 font-serif max-w-2xl mx-auto">
+          A collection of assignments to enhance your learning experience.
+        </p>
+      </div>
+      <section className="py-16" data-aos="fade-up ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -46,19 +42,19 @@ const Assignments = () => {
             ].map((assignment, index) => (
               <div
                 key={index}
-                className="relative flex flex-col bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                className="relative flex flex-col bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
                 data-aos={assignment.animation}
               >
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 dark:bg-teal-600 text-white mb-6 shadow-lg">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-green-500 text-white mb-6 shadow-lg">
                   <span className="text-2xl font-bold">A{index + 1}</span>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 font-serif">
+                <h3 className="text-2xl font-semibold text-black mb-4 font-serif">
                   {assignment.title}
                 </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300 font-serif">
+                <p className="text-lg text-black font-serif">
                   {assignment.description}
                 </p>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-transparent to-teal-500 dark:to-teal-600 opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 rounded-xl bg-yellow-100 opacity-50 hover:opacity-70 transition-opacity duration-300 shadow-md"></div>
               </div>
             ))}
           </div>

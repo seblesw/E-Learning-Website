@@ -56,23 +56,26 @@ const Home = () => {
     </a>
   </div>
 </header>
-
-      <section id="courses" className="py-20 bg-white" data-aos="fade-up">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-gray-800">{t('Featured Courses')}</h2>
-          <p className="text-gray-600 mt-2 text-lg">{t('Explore our top-rated courses designed by industry experts.')}</p>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {courses.map((course, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-transform transform hover:scale-105">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-green-500 text-white mb-4">{course.icon}</div>
-                <h3 className="text-2xl font-bold text-green-700">{course.title}</h3>
-                <p className="text-gray-600 mt-2">{course.description}</p>
-                <a href={course.link} className="mt-4 inline-block text-green-600 font-bold hover:underline">{t('View Details')}</a>
-              </div>
-            ))}
+<section id="courses" className="py-20 bg-white" data-aos="fade-up">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-3xl font-extrabold text-gray-800">{t('Featured Courses')}</h2>
+    <p className="text-gray-600 mt-2 text-lg">{t('Explore our top-rated courses designed by industry experts.')}</p>
+    <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {courses.map((course, index) => (
+        <div key={index} className="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-transform transform hover:scale-105">
+          <div className="flex items-center space-x-4">
+            <div className="h-12 w-12 flex items-center justify-center rounded-full bg-green-500 text-white">
+              {course.icon}
+            </div>
+            <h3 className="text-2xl font-bold text-green-700">{course.title}</h3>
           </div>
+          <p className="text-gray-600 mt-2">{course.description}</p>
+          <a href={course.link} className="mt-4 inline-block text-green-600 font-bold hover:underline">{t('View Details')}</a>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="py-20 bg-gray-100" data-aos="fade-up">
         <div className="max-w-7xl mx-auto text-center">

@@ -2,32 +2,18 @@ import React, { useState } from "react";
 import Swal from 'sweetalert2';
 
 const Signup = () => {
-  const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
-    age: "",
     email: "",
-    phone: "",
-    school: "",
-    grade: "",
-    major: "",
-    studyPreferences: [],
-    extracurriculars: "",
-    futureGoals: "",
-    scholarshipInterest: "",
+    phoneNumber: "",
+    courseSelection: "",
+    skillLevel: "Beginner",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === "checkbox") {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: checked ? [...(prev[name] || []), value] : prev[name].filter((item) => item !== value),
-      }));
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -50,19 +36,11 @@ const Signup = () => {
 
       setFormData({
         fullName: "",
-        age: "",
         email: "",
-        phone: "",
-        school: "",
-        grade: "",
-        major: "",
-        studyPreferences: [],
-        extracurriculars: "",
-        futureGoals: "",
-        scholarshipInterest: "",
+        phoneNumber: "",
+        courseSelection: "",
+        skillLevel: "Beginner",
       });
-
-      setStep(1);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("There was an error submitting the form. Please try again.");
@@ -71,96 +49,67 @@ const Signup = () => {
     }
   };
 
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
-
-  const formSections = [
-    {
-      category: "Personal Info",
-      fields: [
-        { name: "fullName", type: "text", placeholder: "Full Name" },
-        { name: "age", type: "number", placeholder: "Age" },
-        { name: "email", type: "email", placeholder: "Email" },
-        { name: "phone", type: "text", placeholder: "Phone Number" },
-      ],
-    },
-    {
-      category: "Education Info",
-      fields: [
-        { name: "school", type: "text", placeholder: "School Name" },
-        { name: "grade", type: "text", placeholder: "Grade/Class" },
-        { name: "major", type: "text", placeholder: "Major (if applicable)" },
-      ],
-    },
-    {
-      category: "Preferences & Goals",
-      fields: [
-        { name: "studyPreferences", type: "checkbox", options: ["Online", "In-Person", "Hybrid"], placeholder: "Preferred Study Method" },
-        { name: "extracurriculars", type: "text", placeholder: "Extracurricular Activities" },
-        { name: "futureGoals", type: "text", placeholder: "Future Career Goals" },
-      ],
-    },
-    {
-      category: "Scholarship & Assistance",
-      fields: [
-        { name: "scholarshipInterest", type: "radio", options: ["Yes", "No"], placeholder: "Interested in Scholarships?" },
-      ],
-    },
-  ];
-
   return (
-    <section className="bg-gray-100 py-10">
-      <div className="max-w-lg mx-auto p-10 bg-white shadow-md rounded-xl">
-        <h2 className="text-xl font-bold mb-4">Student Signup Form</h2>
-        <div className="mb-4 text-center text-gray-600">Step {step} of {formSections.length}</div>
+    <section className="bg-gray-100 py-28">
+      <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-xl">
+        <h2 className="text-xl font-bold mb-4 text-center"> Registration Form</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {formSections[step - 1].fields.map(({ name, type, options, placeholder }) => (
+          {[ 
+            { name: "fullName", type: "text", placeholder: "Full Name" },
+            { name: "email", type: "email", placeholder: "Email" },
+            { name: "phoneNumber", type: "tel", placeholder: "Phone Number (Optional)" },
+          ].map(({ name, type, placeholder }) => (
             <div key={name}>
-              <label className="block text-sm font-medium capitalize">{placeholder}</label>
-              {type === "select" ? (
-                <select name={name} value={formData[name]} onChange={handleChange} className="w-full border p-2 rounded" required>
-                  <option value="">{placeholder}</option>
-                  {options.map((option) => (
-                    <option key={option} value={option}>{option}</option>
-                  ))}
-                </select>
-              ) : type === "radio" || type === "checkbox" ? (
-                <div>
-                  {options.map((option) => (
-                    <label key={option} className="inline-flex items-center space-x-2 mr-4">
-                      <input
-                        type={type}
-                        name={name}
-                        value={option}
-                        checked={type === "checkbox" ? formData[name]?.includes(option) : formData[name] === option}
-                        onChange={handleChange}
-                        required
-                      />
-                      <span>{option}</span>
-                    </label>
-                  ))}
-                </div>
-              ) : (
-                <input type={type} name={name} value={formData[name]} onChange={handleChange} placeholder={placeholder} className="w-full border p-2 rounded" required />
-              )}
+              <label className="block text-sm font-medium">{placeholder}</label>
+              <input
+                type={type}
+                name={name}
+                value={formData[name]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                className="w-full border p-2 rounded"
+                required={name !== "phoneNumber"}
+              />
             </div>
           ))}
-          <div className="flex justify-between mt-4">
-            {step > 1 && (
-              <button type="button" className="bg-gray-600 text-white py-2 px-4 rounded" onClick={prevStep} disabled={loading}>
-                Previous
-              </button>
-            )}
-            {step < formSections.length ? (
-              <button type="button" className="bg-blue-500 text-white py-2 px-4 rounded" onClick={nextStep} disabled={loading}>
-                Next
-              </button>
-            ) : (
-              <button type="submit" className="bg-green-500 text-white py-2 px-4 rounded" disabled={loading}>
-                {loading ? "Submitting..." : "Submit"}
-              </button>
-            )}
+
+          <div>
+            <label className="block text-sm font-medium">Course Selection</label>
+            <select
+              name="courseSelection"
+              value={formData.courseSelection}
+              onChange={handleChange}
+              className="w-full border p-2 rounded"
+              required
+            >
+              <option value="">Select a Course</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Graphic Design">Graphic Design</option>
+            </select>
           </div>
+
+          <div>
+            <label className="block text-sm font-medium">Skill Level</label>
+            <select
+              name="skillLevel"
+              value={formData.skillLevel}
+              onChange={handleChange}
+              className="w-full border p-2 rounded"
+            >
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+          <button
+  type="submit"
+  className="bg-green-500 text-white py-2 px-16 text-center border-2 border-green-700 mx-auto block rounded-full"
+  disabled={loading}
+>
+  {loading ? "Submitting..." : "Submit"}
+</button>
+
         </form>
       </div>
     </section>
