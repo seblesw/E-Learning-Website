@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
 import { FaChalkboardTeacher, FaUsers, FaLaptopCode, FaProjectDiagram } from 'react-icons/fa';
 import { FiBook } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const images = ['assets/hero/learningHero.png'];
 
@@ -20,18 +21,16 @@ const Home = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, []);
-
-  const courses = [
-    { title: t('Introduction to Programming'), description: t('Learn coding fundamentals with hands-on exercises.'), icon: <BookOpen size={32} />, link: '#' },
-    { title: t('Data Science Essentials'), description: t('Explore data analysis and visualization.'), icon: <FiBook size={32} />, link: '#' },
-    { title: t('Web Development Bootcamp'), description: t('Master front-end and back-end web technologies.'), icon: <FaChalkboardTeacher size={32} />, link: '#' },
-    { title: t('Cybersecurity Fundamentals'), description: t('Understand online security and ethical hacking.'), icon: <Shield size={32} />, link: '#' },
-    { title: t('AI & Machine Learning'), description: t('Learn AI concepts and build smart applications.'), icon: <Globe size={32} />, link: '#' },
-    { title: t('Project Management Professional'), description: t('Develop skills to manage complex projects.'), icon: <FaProjectDiagram size={32} />, link: '#' },
-  ];
+  const icons = {
+    "Software Engineering": <Code size={32} />,
+    "Data Science": <Globe size={32} />,
+    "Artificial Intelligence": <BookOpen size={32} />,
+    "Cybersecurity": <Shield size={32} />,
+    "Product Design": <Users size={32} />
+  };
 
   return (
-    <div className="font-sans antialiased bg-gray-50 text-gray-900">
+<div className="font-sans antialiased bg-gray-50 text-gray-900">
 <header
   className="relative min-h-screen flex items-center bg-cover bg-center shadow-lg"
   style={{
@@ -58,26 +57,48 @@ const Home = () => {
 </header>
 <section id="courses" className="py-20 bg-white" data-aos="fade-up">
   <div className="max-w-7xl mx-auto text-center">
-    <h2 className="text-3xl font-extrabold text-gray-800">{t('Featured Courses')}</h2>
-    <p className="text-gray-600 mt-2 text-lg">{t('Explore our top-rated courses designed by industry experts.')}</p>
+    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">{t('Featured Programs')}</h2>
+    <p className="text-gray-600 text-lg">
+      {t('Explore our top-rated programs designed by industry experts.')}
+    </p>
     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {courses.map((course, index) => (
-        <div key={index} className="bg-white p-8 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-transform transform hover:scale-105">
-          <div className="flex items-center space-x-4">
-            <div className="h-12 w-12 flex items-center justify-center rounded-full bg-green-500 text-white">
-              {course.icon}
+      {[
+        "Software Engineering",
+        "Data Science",
+        "Artificial Intelligence",
+        "Cybersecurity",
+        "Product Design"
+      ].map((program, index) => (
+        <div
+          key={index}
+          className="group relative bg-white rounded-2xl px-6 py-10 min-h-[360px] flex flex-col justify-between shadow-md border border-gray-100 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 hover:scale-[1.02]"
+        >
+          <div>
+            <div className="absolute top-6 right-6 h-10 w-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white shadow-lg">
+              {icons[program] || <BookOpen size={20} />}
             </div>
-            <h3 className="text-2xl font-bold text-green-700">{course.title}</h3>
+            <h3 className="text-2xl font-bold text-green-700 mb-4">{t(program)}</h3>
+            <p className="text-gray-600 leading-relaxed">
+              {t('Includes Essentials, Foundations, and Capstone projects for full immersion.')}
+            </p>
           </div>
-          <p className="text-gray-600 mt-2">{course.description}</p>
-          <a href={course.link} className="mt-4 inline-block text-green-600 font-bold hover:underline">{t('View Details')}</a>
-        </div>
+          <div className="mt-6">
+           <Link
+  to={`/curriculum/${program.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+  className="inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-green-700 rounded-full shadow-lg group-hover:scale-105 transition-transform"
+>
+  {t('Explore Curriculum')}
+  <svg className="ml-2 w-4 h-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path d="M10 0l3 3-5 5H0v4h8l5 5-3 3 10-10L10 0z" />
+  </svg>
+</Link>
+</div>
+ </div>
       ))}
     </div>
   </div>
 </section>
-
-      <section className="py-20 bg-gray-100" data-aos="fade-up">
+  <section className="py-20 bg-gray-100" data-aos="fade-up">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-gray-800">{t('Why Choose Us?')}</h2>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -86,7 +107,7 @@ const Home = () => {
             <div className="bg-white p-8 rounded-lg shadow-md"><Users size={40} className="text-green-500 mx-auto" /><h3 className="text-xl font-semibold mt-4">{t('Community Support')}</h3><p className="text-gray-600 mt-2">{t('Join a network of learners and get access to mentors.')}</p></div>
           </div>
         </div>
-      </section>
+</section>
 
       <Footer data-aos="fade-up" />
     </div>

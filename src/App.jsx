@@ -11,6 +11,12 @@ import Discussions from './pages/Discussions/Discussions';
 import Resources from './pages/Resources/Resources';
 import Assignments from './pages/Assignments/Assignments';
 import Signup from './pages/Signup/signup';
+import SoftwareEssentials from './pages/curriculum/SoftwareEngi';
+import DataScience from './pages/curriculum/Data Science';
+import AI from './pages/curriculum/AI';
+import AIBootcamp from './pages/curriculum/AI';
+import Cybersecurity from './pages/curriculum/Cybersecurity';
+import ProductDesign from './pages/curriculum/Product Design';
 
 
 function App() {
@@ -35,7 +41,12 @@ function App() {
         <Route path="/Assignments" element={<Assignments />} />
         <Route path="/discussions" element={<Discussions />} />
         <Route path="/Signup" element={<Signup />} />
-      </Routes>
+        <Route path="/curriculum/software-engineering" element={<SoftwareEssentials />} />
+        <Route path="/curriculum/Data-Science" element={<DataScience />} />
+        <Route path="/curriculum/artificial-intelligence" element={<AIBootcamp />} />
+        <Route path="/curriculum/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/curriculum/product-design" element={<ProductDesign />} />
+        </Routes>
     </Router>
   );
 }
